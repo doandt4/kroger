@@ -1,0 +1,20 @@
+.input-group-append .input-group-icon {
+  display: flex;
+  justify-content: flex-end;
+}
+.forgot-password {
+  &:hover {
+    color: #D86236 !important;
+  }
+}
+
+.link-register {
+  &:hover {
+    color: #D86236 !important;
+  }
+}
+
+.form-check {
+  font-weight: bold;
+  color: #3E3F42;
+}

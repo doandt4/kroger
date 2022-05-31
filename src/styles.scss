@@ -1,0 +1,687 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap";
+@import "./assets/fonts/style.css";
+
+/**
+ * Base Rules
+ */
+
+/* General Class */
+
+/* Transition General */
+
+/* Container Width */
+
+/* Title */
+
+/* Circle */
+
+/* Heading */
+
+/* Form Login */
+
+/* Slider */
+
+/* Scroll Content */
+
+/* Button general */
+
+/* Card Item */
+
+/* Carousel */
+
+/* Checkbox */
+
+/* Radio */
+
+/* Header */
+
+/* Header Action */
+
+/* Logo */
+
+/* Navigation */
+
+/* Progress Box */
+
+/* Search Minimal */
+
+/* Sidebar */
+
+/* Menu */
+
+/* Page Login */
+
+/* Post Details */
+
+/* Page Campaign
+- Campaign General
+*/
+
+/* Page Campaign
+- Campaign Summary
+*/
+
+/* Page Campaign
+- Campaign Regions
+*/
+
+/* Page Campaign
+- Campaign target
+*/
+
+/* Page Campaign
+- Campaign List
+*/
+
+/* Page Campaign
+- Campaign Media
+*/
+
+/* Page Campaign
+- Campaign Runtime
+*/
+
+/* Profile */
+
+/* Rule */
+
+/* For screen width from 576px */
+
+/* For screen width from 769px */
+
+/* For screen width from 992px */
+
+/* For screen width from 992px to 1200px */
+
+/* For screen width from 1200px */
+
+/* For screen width from 1440px */
+
+/* For screen width from 1200px */
+
+/* For screen width from 1640px */
+
+/* For screen width from 1840px */
+
+/* For screen width to 991px */
+
+/* For screen width to 767px */
+
+body {
+  font-family: "Poppins-Regular", sans-serif !important;
+}
+
+.color-white {
+  color: #ffffff !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.color-accent {
+  color: #d86236 !important;
+}
+
+.bg-accent {
+  background-color: #d86236 !important;
+  background-color: #d86236 !important;
+}
+
+.color-accent-2 {
+  color: #ff4500 !important;
+}
+
+.bg-accent-2 {
+  background-color: #ff4500 !important;
+}
+
+.color-accent-3 {
+  color: #dc734d !important;
+}
+
+.bg-accent-3 {
+  background-color: #dc734d !important;
+}
+
+.color-accent-4 {
+  color: #f8c8b6 !important;
+}
+
+.bg-accent-4 {
+  background-color: #f8c8b6 !important;
+}
+
+.color-black {
+  color: #232323 !important;
+}
+
+.bg-black {
+  background-color: #232323 !important;
+}
+
+.color-black-2 {
+  color: #414d55 !important;
+}
+
+.bg-black-2 {
+  background-color: #414d55 !important;
+}
+
+.color-black-3 {
+  color: #3e3e3e !important;
+}
+
+.bg-black-3 {
+  background-color: #3e3e3e !important;
+}
+
+.color-black-4 {
+  color: #373737 !important;
+}
+
+.bg-black-4 {
+  background-color: #373737 !important;
+}
+
+.color-black-5 {
+  color: #303030 !important;
+}
+
+.bg-black-5 {
+  background-color: #303030 !important;
+}
+
+.color-blue {
+  color: #29e7cd !important;
+}
+
+.bg-blue {
+  background-color: #29e7cd !important;
+}
+
+.color-blue-2 {
+  color: #2662f0 !important;
+}
+
+.bg-blue-2 {
+  background-color: #2662f0 !important;
+}
+
+.color-blue-3 {
+  color: #0e3080 !important;
+}
+
+.bg-blue-3 {
+  background-color: #0e3080 !important;
+}
+
+.color-blue-4 {
+  color: #3340ee !important;
+}
+
+.bg-blue-4 {
+  background-color: #3340ee !important;
+}
+
+.color-blue-5 {
+  color: #476cff !important;
+}
+
+.bg-blue-5 {
+  background-color: #476cff !important;
+}
+
+.color-blue-6 {
+  color: #2424eb !important;
+}
+
+.bg-blue-6 {
+  background-color: #2424eb !important;
+}
+
+.color-blue-7 {
+  color: #0496ff !important;
+}
+
+.bg-blue-7 {
+  background-color: #0496ff !important;
+}
+
+.color-red {
+  color: #d83636 !important;
+}
+
+.bg-red {
+  background-color: #d83636 !important;
+}
+
+.color-red-2 {
+  color: #eb2424 !important;
+}
+
+.bg-red-2 {
+  background-color: #eb2424 !important;
+}
+
+.color-red-3 {
+  color: #e92121 !important;
+}
+
+.bg-red-3 {
+  background-color: #e92121 !important;
+}
+
+.color-red-4 {
+  color: #d86235 !important;
+}
+
+.bg-red-4 {
+  background-color: #d86235 !important;
+}
+
+.color-red-5 {
+  color: #e6382b !important;
+}
+
+.bg-red-5 {
+  background-color: #e6382b !important;
+}
+
+.color-red-6 {
+  color: #cc1f00 !important;
+}
+
+.bg-red-6 {
+  background-color: #cc1f00 !important;
+}
+
+.color-green {
+  color: #7cd836 !important;
+}
+
+.bg-green {
+  background-color: #7cd836 !important;
+}
+
+.color-green-2 {
+  color: #7ed321 !important;
+}
+
+.bg-green-2 {
+  background-color: #7ed321 !important;
+}
+
+.color-green-3 {
+  color: #04e762 !important;
+}
+
+.bg-green-3 {
+  background-color: #04e762 !important;
+}
+
+.color-green-4 {
+  color: #2a8514 !important;
+}
+
+.bg-green-4 {
+  background-color: #2a8514 !important;
+}
+
+.color-green-5 {
+  color: #2aae2d !important;
+}
+
+.bg-green-5 {
+  background-color: #2aae2d !important;
+}
+
+.color-green-6 {
+  color: #83da41 !important;
+}
+
+.bg-green-6 {
+  background-color: #83da41 !important;
+}
+
+.color-green-7 {
+  color: #9bbe38 !important;
+}
+
+.bg-green-7 {
+  background-color: #9bbe38 !important;
+}
+
+.color-green-8 {
+  color: #21961f !important;
+}
+
+.bg-green-8 {
+  background-color: #21961f !important;
+}
+
+.color-green-9 {
+  color: #1e8035;
+}
+
+.bg-green-9 {
+  background-color: #1e8035;
+}
+
+.color-orange {
+  color: #f2875f !important;
+}
+
+.bg-orange {
+  background-color: #f2875f !important;
+}
+
+.color-orange-2 {
+  color: #f36565 !important;
+}
+
+.bg-orange-2 {
+  background-color: #f36565 !important;
+}
+
+.color-orange-3 {
+  color: #f3906b !important;
+}
+
+.bg-orange-3 {
+  background-color: #f3906b !important;
+}
+
+.color-orange-4 {
+  color: #eb4a16 !important;
+}
+
+.bg-orange-4 {
+  background-color: #eb4a16 !important;
+}
+
+.color-orange-5 {
+  color: #f17105 !important;
+}
+
+.bg-orange-5 {
+  background-color: #f17105 !important;
+}
+
+.color-orange-6 {
+  color: #ffa700 !important;
+}
+
+.bg-orange-6 {
+  background-color: #ffa700 !important;
+}
+
+.color-orange-7 {
+  color: #ff715b !important;
+}
+
+.bg-orange-7 {
+  background-color: #ff715b !important;
+}
+
+.color-purple {
+  color: #f25fe3 !important;
+}
+
+.bg-purple {
+  background-color: #f25fe3 !important;
+}
+
+.color-purple-1 {
+  color: #771993 !important;
+}
+
+.bg-purple-1 {
+  background-color: #771993 !important;
+}
+
+.color-purple-2 {
+  color: #b100ff !important;
+}
+
+.bg-purple-2 {
+  background-color: #b100ff !important;
+}
+
+.color-purple-3 {
+  color: #a561ff !important;
+}
+
+.bg-purple-3 {
+  background-color: #a561ff !important;
+}
+
+.color-gray {
+  color: #777777 !important;
+}
+
+.bg-gray {
+  background-color: #777777 !important;
+}
+
+.color-gray-1 {
+  color: #e4eaf0 !important;
+}
+
+.bg-gray-1 {
+  background-color: #e4eaf0 !important;
+}
+
+.color-gray-2 {
+  color: #afafaf !important;
+}
+
+.bg-gray-2 {
+  background-color: #afafaf !important;
+}
+
+.color-gray-3 {
+  color: #707070 !important;
+}
+
+.bg-gray-3 {
+  background-color: #707070 !important;
+}
+
+.color-gray-4 {
+  color: #787878 !important;
+}
+
+.bg-gray-4 {
+  background-color: #787878 !important;
+}
+
+.color-gray-5 {
+  color: #7a7a7a !important;
+}
+
+.bg-gray-5 {
+  background-color: #7a7a7a !important;
+}
+
+.color-gray-6 {
+  color: #b7b7b7 !important;
+}
+
+.bg-gray-6 {
+  background-color: #b7b7b7 !important;
+}
+
+.color-gray-7 {
+  color: #e3e3e3 !important;
+}
+
+.bg-gray-7 {
+  background-color: #e3e3e3 !important;
+}
+
+.color-gray-8 {
+  color: #dbd3d3 !important;
+}
+
+.bg-gray-8 {
+  background-color: #dbd3d3 !important;
+}
+
+.color-gray-9 {
+  color: #696d6e !important;
+}
+
+.bg-gray-9 {
+  background-color: #696d6e !important;
+}
+
+.color-gray-10 {
+  color: #727677 !important;
+}
+
+.bg-gray-10 {
+  background-color: #727677 !important;
+}
+
+.color-gray-11 {
+  color: #d8d8d8 !important;
+}
+
+.bg-gray-11 {
+  background-color: #d8d8d8 !important;
+}
+
+.color-gray-12 {
+  color: #cecece !important;
+}
+
+.bg-gray-12 {
+  background-color: #cecece !important;
+}
+
+.color-gray-13 {
+  color: #f7f7f7 !important;
+}
+
+.bg-gray-13 {
+  background-color: #f7f7f7 !important;
+}
+
+.color-gray-14 {
+  color: #606060 !important;
+}
+
+.bg-gray-14 {
+  background-color: #606060 !important;
+}
+
+.color-gray-15 {
+  color: #7d7d7d !important;
+}
+
+.bg-gray-15 {
+  background-color: #7d7d7d !important;
+}
+
+.color-gray-16 {
+  color: #f2f2f2 !important;
+}
+
+.bg-gray-16 {
+  background-color: #f2f2f2 !important;
+}
+
+.color-gray-17 {
+  color: #f8f8f8 !important;
+}
+
+.bg-gray-17 {
+  background-color: #f8f8f8 !important;
+}
+
+.color-gray-18 {
+  color: #eeeeee !important;
+}
+
+.bg-gray-18 {
+  background-color: #eeeeee !important;
+}
+
+.color-gray-19 {
+  color: #fcfcfc !important;
+}
+
+.bg-gray-19 {
+  background-color: #fcfcfc !important;
+}
+
+.color-gray-20 {
+  color: #f1f1f1 !important;
+}
+
+.bg-gray-20 {
+  background-color: #f1f1f1 !important;
+}
+
+.color-gray-21 {
+  color: #dedede !important;
+}
+
+.bg-gray-21 {
+  background-color: #dedede !important;
+}
+
+.color-gray-22 {
+  color: #a5a5a5 !important;
+}
+
+.bg-gray-22 {
+  background-color: #a5a5a5 !important;
+}
+
+.color-yellow {
+  color: #e6ae2c !important;
+}
+
+.bg-yellow {
+  background-color: #e6ae2c !important;
+}
+
+.color-yellow-1 {
+  color: #dfdb5f !important;
+}
+
+.bg-yellow-1 {
+  background-color: #dfdb5f !important;
+}
+
+body {
+  font-family: "Poppins-Regular", sans-serif;
+  color: #232323;
+  font-size: 0.875rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+html {
+  height: auto;
+  scroll-behavior: smooth;
+}
+
+/* Importing Bootstrap SCSS file. */
+
+@import "~bootstrap/scss/bootstrap";
+
+a {
+  text-decoration: none;
+}
+
+.cursor-pt {
+  cursor: pointer;
+}

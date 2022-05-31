@@ -1,0 +1,123 @@
+a:hover {
+  text-decoration: none !important;
+}
+
+.administrator {
+}
+
+.header {
+  height: 99px;
+  padding: 0 65px;
+}
+
+.logo {
+  height: 100%;
+  img {
+    height: 100%;
+  }
+}
+.btn-logout {
+  border: none;
+  outline: none;
+  background: #484848;
+  font-family: "Poppins-Light";
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 172px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.navigation {
+  width: 369px;
+  background-color: #fbfbfb;
+  padding: 48px 65px 58px;
+  height: calc(100vh - 99px);
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 8px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #8f8d8d;
+  }
+}
+.link-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.link-item {
+  border-radius: 5px;
+  background: #ffffff;
+  width: 100%;
+  font-family: "Poppins-Light";
+  font-size: 17px;
+  border: 1px solid #ffffff;
+  transition: 0.4s all;
+  padding: 10px 0;
+
+  a {
+    color: #000000;
+    transition: 0.4s all;
+  }
+  &:not(:last-child) {
+    margin-bottom: 21px;
+  }
+
+  &.active {
+    border: 1px solid #2660a4;
+    a {
+      color: #2660a4;
+    }
+  }
+}
+
+.expand-menu {
+  position: absolute;
+  right: 19px;
+  height: 15px;
+  width: 15px;
+  font-size: 15px;
+}
+
+.btn-save-changes {
+  width: 172px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2660a4;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Poppins-Light";
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.sub-menu {
+  overflow: hidden;
+  transition: max-height 0.3s ease 0s;
+  list-style-type: none;
+
+  ul {
+  }
+}

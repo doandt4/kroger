@@ -1,0 +1,43 @@
+# default:
+#   image: node:latest
+  
+# stages:
+#  - build
+#  - deploy
+ 
+# build:
+#     stage: build
+#     image: node:latest
+    
+#     only:
+#         - master
+        
+#     tags: 
+#         - midas
+        
+#     script:
+#         - npm install -g n
+#         - n 10.24.0
+#         - npm install -g npm@6.11.0
+#         - git pull origin master 
+#         - rm package-lock.json
+#         - npm install --force
+#         - npm run build:prod
+        
+#     artifacts:
+#         name: "midasmoon-frontend"
+#         paths:
+#           - dist
+#     cache:
+#         paths:
+#           - node_modules/
+          
+# deploy: 
+#     stage: deploy
+    
+#     before_script:
+#         - apt-get update -qq && apt-get install -y -qq sshpass
+        
+#     script:
+#         - export SSHPASS=$USER_PASS
+#         - sshpass -e scp -o stricthostkeychecking=no -rv ./dist/midasmoon-frontend/* root@midasdev.midasmoon.com:/home/midas/midas-frontend

@@ -1,0 +1,51 @@
+.input-group-append .input-group-icon {
+    display: flex;
+    justify-content: flex-end;
+}
+.cdk-overlay-container {
+    z-index: 9;
+}
+.header-model-cr {
+    margin: 5px 0 30px;
+}
+.header-model-cr .close-modal {
+    position: absolute;
+    top: 0;
+}
+::ng-deep {
+    .snack_bar {
+        color: white;
+        background: #d86236;
+    }
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+        background-color: white;
+    }
+
+    .edit-dialog {
+        .password-container {
+            display: none;
+        }
+        .email-container {
+            opacity: 0.5;
+        }
+    }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1600px) {
+    // ::ng-deep {
+    //   .cdk-overlay-pane.register-dialog {
+    //     height: 90vh;
+    //   }
+    // }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1627px) {
+    ::ng-deep {
+        .mat-form-field {
+            width: 100%;
+        }
+    }
+}

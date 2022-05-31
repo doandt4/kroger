@@ -1,0 +1,48 @@
+replicaCount: 1
+
+dockercfg:
+  enabled: true
+  image:
+    pullSecret:
+      registry: registry.gitlab.com
+      username: josiah.choi_diginex
+      password: {{ .Env.IMAGE_REPOSITORY_PASSWORD }}
+
+image:
+  repository: registry.gitlab.com/diginexhk/iom/safer-frontend
+  tag: "dev2-{{ .Env.CI_PIPELINE_ID }}"
+  pullSecrets:
+    - midasmoon-frontend-dev-dockercfg
+
+deployment:
+  enabled: true
+
+service:
+  enabled: true
+  type: ClusterIP
+  ports:
+    default:
+      internal: 80
+      external: 80
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 80m
+    memory: 64Mi
+
+virtualService:
+  enabled: true
+  hosts:
+  - "midasmoon.dev2.diginex.fun"
+  gateways:
+  - default/ingressgateway-dev2
+  routes:
+    default:
+      matchIPs:
+        - 20.188.102.88
+      destination:
+        host: midasmoon-frontend-dev-monochart
+        port: 80

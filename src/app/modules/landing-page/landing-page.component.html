@@ -1,0 +1,17 @@
+<div class="home text-center">
+  <p class="text-center">Download CSV</p>
+  <form class="example-form d-flex justify-content-center">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        placeholder="..."
+        [(ngModel)]="searchValue"
+        name="search"
+      />
+    </mat-form-field>
+  </form>
+  <button mat-raised-button color="primary" (click)="download()">
+    Download CSV
+  </button>
+</div>

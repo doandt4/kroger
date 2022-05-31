@@ -1,0 +1,38 @@
+replicaCount: 1
+
+image:
+  repository: harbor.dev.diginex.fun/diginex/midasmoon-frontend
+  tag: {{ .Env.CI_PIPELINE_ID }}
+
+deployment:
+  enabled: true
+
+service:
+  enabled: true
+  type: ClusterIP
+  ports:
+    default:
+      internal: 80
+      external: 80
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 80m
+    memory: 64Mi
+
+virtualService:
+  enabled: true
+  hosts:
+  - "midasmoon.dev.diginex.fun"
+  gateways:
+  - default/ingressgateway-dev
+  routes:
+    default:
+      matchIPs:
+      - 61.92.243.178
+      destination:
+        host: midasmoon-frontend-dev-monochart
+        port: 80

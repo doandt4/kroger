@@ -1,0 +1,57 @@
+<div class="main-modal">
+    <div class="user-form mx-auto pb-5 mb-3">
+        <div class="mid-heading">
+            <a (click)="dialogRef.close()" class="close-modal position-absolute" data-dismiss="modal">
+                <i class="icon-close"></i>
+            </a>
+            <h3 class="mid-title">Reset Password</h3>
+            <span class="mid-sub-title">Forgot your password?
+                <span class="font-weight-normal">
+                    We’ll help you reset it and get back on track.
+                </span>
+            </span>
+        </div>
+        <div [formGroup]="forgotForm">
+            <div class="form-shadow mx-4 mx-xl-0">
+                <div class="form-group-custom">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-icon"><i class="icon-mail"></i></div>
+                        </div>
+                        <div class="input-group-control flex-grow-1">
+                            <label>Email address</label>
+                            <input formControlName="email" class="form-control" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <mat-error *ngIf="validateForm('email','required')">
+                        The email field is required
+                    </mat-error>
+                    <mat-error *ngIf="validateForm('email','email')">
+                        This is not a valid email
+                    </mat-error>
+                    <mat-error *ngIf="validateForm('email','exist')">
+                        We can't find an account registered with that email address
+                    </mat-error>
+                </div>
+                <div *ngIf="notiSuccess" class="form-group-custom">
+                    <div class="input-group">
+                        Instructions for resetting your MIDASMOON password have been sent to your email address.
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="form-button d-flex flex-column flex-lg-row flex-column-reverse justify-content-between align-items-center mt-4">
+
+                <button (click)="backToLogin()" type="button" class="mid-button mid-button-dark mt-5 mt-lg-0 cursor-pt">
+                    BACK
+                </button>
+                <button (click)="resetPassword()" type="submit" class="mid-button text-capitalize"
+                    [disabled]='forgotForm.invalid'>
+                    <mat-progress-spinner *ngIf="isLoading" diameter="20" mode="indeterminate"></mat-progress-spinner>
+                    <span>Resend password</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

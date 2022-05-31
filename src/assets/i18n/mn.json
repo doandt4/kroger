@@ -1,0 +1,361 @@
+{
+    "LANGUAGE": "Mongolian",
+    "HOME": {
+        "MENU": {
+            "PRA_PORTAL": "оролцооны ийм портал",
+            "USER_MANAGEMENT": "Хэрэглэгчийн менежмент",
+            "DASHBOARD": "Хяналтын самбар",
+            "ACCOUNT_SETTINGS": "Хэрэглэгчийн тохиргоо",
+            "SELF_ASSESSMENT": {
+                "TITLE": "Өөрийгөө үнэлэх",
+                "QUESTIONS": "Асуулт",
+                "INTRO_INSTRUCTION": "Танилцуулга, зааварчилгаа"
+            },
+            "LOGOUT": "Гарах",
+            "INBOX": "Ирсэн имэйл",
+            "DOCUMENT": "Бичиг баримт"
+        }
+    },
+    "PRA_PORTAL": {
+        "ADD_PRA_USER": {
+            "TITLE": "ШИНЭ ПРА ХЭРЭГЛЭГЧ НЭМЭХ",
+            "PRA_USER_FIRST_NAME": "PRA ХЭРЭГЛЭГЧИЙН АНХДУГААР НЭР",
+            "PRA_USER_LAST_NAME": "PRA ХЭРЭГЛЭГЧИЙН СҮҮЛИЙН НЭР",
+            "PRA_USER_EMAIL": "PRA ХЭРЭГЛЭГЧИЙН ИМЭЙЛ",
+            "AGENCY_NAME": "АГЕНТЛИЙН НЭР",
+            "RE_ENTER_EMAIL": "И-МЭЙЛ ДАХИН ОРУУЛАХ",
+            "CASE_OWNER": "ХЭРЭГЧ ЭМЧ",
+            "REGION": "БҮС",
+            "REGION_PLACEHOLDER": "Бүс нутгийг сонгоно уу",
+            "TERRITORY": "НУТГААР",
+            "TERRITORY_PLACEHOLDER": "Нутаг дэвсгэрийг сонго"
+        },
+        "CURRENT_PRAS_CASES": {
+            "TITLE": "ӨНӨӨДӨР ПРА, ХЭЛБЭР",
+            "FILTER": "Шүүлтүүр",
+            "PRA": "PRA",
+            "REGION": "БҮС",
+            "TERRITORY": "НУТГААР",
+            "PRA_USER_EMAIL": "PRA ХЭРЭГЛЭГЧИЙН ИМЭЙЛ",
+            "LAST_LOGIN": "СҮҮЛИЙН НЭВТРЭЛ",
+            "STATUS": "БАЙДАЛ",
+            "DOCUMENTS_UPLOADED": "АШИГЛАСАН БАРИМТ БИЧИГ",
+            "CASE_OWNER": "ХЭРЭГЧ ЭМЧ",
+            "ACTIONS_OUTSTANDING": "ҮЙЛ АЖИЛЛАГААНЫ ОЙЛГОЛТ"
+        }
+    },
+    "USER_MANAGEMENT": {
+        "ADD_IOM_USER": {
+            "TITLE": "IOM-ийн ШИНЭ ХЭРЭГЛЭГЧ НЭМЭХ",
+            "FIRST_NAME": "НЭР",
+            "EMAIL": "ИМЭЙЛ",
+            "LAST_NAME": "СҮҮЛИЙН НЭР",
+            "ROLE": "ҮҮРЭГ",
+            "ROLE_PLACEHOLDER": "",
+            "REGION_OFFICE": "БҮСИЙН АЛБА",
+            "REGION_OFFICE_PLACEHOLDER": "",
+            "COUNTRY_OFFICE": "УЛСЫН АЛБА",
+            "COUNTRY_OFFICE_PLACEHOLDER": "",
+            "BTN_ADD": ""
+        },
+        "IOM_USERS": {
+            "TITLE": "IOM-ХЭРЭГЛЭГЧ",
+            "FILTER": "Шүүлтүүр",
+            "ROLE": "ҮҮРЭГ",
+            "NAME": "НЭР",
+            "SURNAME": "ОВОГ",
+            "REGION": "БҮС",
+            "COUNTRY": "УЛС",
+            "EMAIL": "ИМЭЙЛ",
+            "LAST_LOGIN": "СҮҮЛИЙН НЭВТРЭЛ",
+            "STATUS": "БАЙДАЛ",
+            "DELETE": "Устгах"
+        }
+    },
+    "DASHBOARD": {
+        "CHOOSE_DATE_REGION": {
+            "TITLE": "",
+            "DATE_FROM": "",
+            "DATE_TO": "",
+            "REGION_OFFICE": "",
+            "COUNTRY_OFFICE": "",
+            "COUNTRY_OFFICE_PLACEHOLDER": ""
+        },
+        "CHOOSE_DATA_TYPE": {
+            "TITLE": "",
+            "SCORES": "",
+            "DOCUMENTS": "",
+            "QUESTIONS": "",
+            "USERS": "",
+            "BTN_DOWNLOAD": "",
+            "HINT": ""
+        },
+        "USER_NAME": "Хэрэглэгчийн нэр",
+        "OVERVIEW": "Тойм",
+        "REGION": "Аймаг",
+        "COUNTRY": "Улсын нэр",
+        "EMAIL": "И-мэйл",
+        "IOM_CASE_OWNER": "ОУШХБ-ийн хариуцсан ажилтан",
+        "SELF_ASSESSMENT_RESULTS": "ӨӨРИЙН ҮНЭЛГЭЭНИЙ ХАРИУ",
+        "RECENT_INDICATIVE": "Хамгийн сүүлийн хэсэг тус бүрийн оноо",
+        "RECENT_SELF_ASSESSMENT": "Хамгийн сүүлийн өөрийгөө үнэлсэн нийт оноо"
+    },
+    "ACCOUNT_SETTINGS": {
+        "CHANGE_PASSWORD": {
+            "TITLE": "нууц үг солих",
+            "CURRENT_PASSWORD": "Одоо байгаа нууц үг",
+            "NEW_PASSWORD": "Шинэ нууц үг",
+            "CONFIRM_NEW_PASSWORD": "ШИНЭ НУУЦ ҮГ БАТАЛГААЖУУЛАХ",
+            "LEAST_MINIMUM_CHARACTERS": "Доод тал нь 8 тэмдэгттэй байх",
+            "LEAST_ONE_NUMBER": "Доод тал нь нэг тоо байх",
+            "LEAST_ONE_LOWERCASE": "Доод тал нь нэг жижиг үсэг оруулах",
+            "LEAST_ONE_UPPERCASE": "Доод тал нь нэг том үсэг оруулах",
+            "NO_SPACE_CHARACTER": "Тэмдэгтүүдийн хооронд зай авахгүй байх",
+            "BTN_CHANGE": "нууц үг солих",
+            "CURRENT_PASSWORD_REQUIRE": "Одоогийн нууц үг оруулна уу.",
+            "NEW_PASSWORD_REQUIRE": "Шинэ нууц үг оруулна уу.",
+            "CONFIRM_PASSWORD_REQUIRE": "Баталгаажуулах нууц үг оруулна уу.",
+            "MINI_LENGTH": "Нууц үг доод тал нь 8 тэмдэгттэй байх боломжтой.",
+            "MATCH_PASS": "Нууц үг болон дахин оруулсан нууц үг зөрсөн байна.",
+            "MIN_LENGTH_CONFIRM_PASSWORD": "Нууц үг дахин оруулах доод хэмжээ 8 тэмдэгт байх "
+        },
+        "CHANGE_LANGUAGE": {
+            "TITLE": "Хэл өөрчлөх"
+        }
+    },
+    "SELF_ASSESSMENT": {
+        "ADMIN": {
+            "QUESTIONS": {
+                "PRINCIPLE": "",
+                "PRINCIPLE_INTRODUCTION": "",
+                "QUESTION_INDEX": "",
+                "QUESTION_CONTENT": "",
+                "SELF_ASSESSMENT_GUIDANCE_CONTENT": "",
+                "SCORE_WEIGHTING": "",
+                "DOCUMENT_REQUIRED": "",
+                "DOCUMENT_ADDITIONAL_INFORMATION": "",
+                "BTN_ADD_QUESTION": "",
+                "BTN_ADD_SECTION": "",
+                "BTN_EDIT": "",
+                "BTN_DISCARD": "",
+                "BTN_PREVIEW_ALL": ""
+            },
+            "INTRO_INSTRUCTION": {
+                "TITLE_HEADER": "",
+                "TITLE_MASTER": "",
+                "TITLE_CHILD": "",
+                "BTN_EDIT": ""
+            }
+        },
+        "USER": {
+            "TITLE": "ИРИС СЭЙФЕР",
+            "INTRODUCTION_INSTRUCTIONS": "Танилцуулга ба заавар",
+            "BTN_START_SAQ": "Өөрийн үнэлгээг эхлүүлэх",
+            "COMPLETE_TITLE": "Өөрийн үнэлгээ хийгдэж дууссан",
+            "SUB_COMPLETE_TITLE": "Амжилттай илгээгдлээ",
+            "PRINCIPLE": {
+                "TITLE": "Зарчим",
+                "QUESTION": "Асуулт",
+                "ANSWER_YES": "Тийм",
+                "ANSWER_NO": "Үгүй",
+                "ANSWER_FILE_HISTORY": "ФАЙЛЫН ТҮҮХ",
+                "ANSWER_CHOOSE_FILE": "Файл сонгох"
+            },
+            "BOTTOM_BUTTON": {
+                "MESSAGE": "Хариултаа хадгалаад дараа нь дуусгаж болно.",
+                "DISCARD_BTN": "Цуцлах",
+                "SAVE_ANSWER_BTN": "Хариултаа хадгалах",
+                "SUBMIT_BTN": "Илгээх"
+            }
+        },
+        "DIALOG": {
+            "CONFIRM_DIALOG": {
+                "TITLE": "Баталгаажуулах",
+                "CLOSE_BTN": "Хаах"
+            },
+            "ADDITIONAL_DIALOG": {
+                "QUESTION": "Асуулт",
+                "TITLE": "Нэмэлт мэдээлэл ба агуулга",
+                "CLOSE_BTN": "Хаах"
+            },
+            "SUBMIT_ANSWER_DIALOG": {
+                "DISCARD_BTN": "Цуцдах",
+                "SUBMIT_BTN": "Илгээх"
+            },
+            "FILE_HISTORY_DIALOG": {
+                "QUESTION_TITLE": "АСУУЛТ",
+                "TITLE": "ФАЙЛЫН ТҮҮХ",
+                "FILE_NAME": "Файлын нэр",
+                "ACTION": "Үйлдэл",
+                "DATE": "Огноо",
+                "BACK_BTN": "Буцах",
+                "UPLOAD_ACTION": "Байршуулах",
+                "ACCEPT_ACTION": "Хүлээн зөвшөөрөгдсөн",
+                "REJECT_ACTION": "Түдгэлзүүлсэн",
+                "DELETE_ACTION": "устгасан"
+            },
+            "UNSAVE_CHANGE_DIALOG": {
+                "TITLE": "Хадгалагдаагүй өөрчлөлтүүд",
+                "MESSAGE": "Оруулсан өөрчлөлтүүд хадгалагдаагүй байна! Гарсан тохиолдолд таны оруулсан өөрчлөлтүүд алдагдана.",
+                "CANCEL_BTN": "Цуцлах",
+                "CONFIRM_BTN": "Баталгаажуулах"
+            }
+        }
+    },
+    "INBOX": {
+        "BTN_COMPOSE": "Шинээр мэдэгдэл үүсгэх",
+        "PRA_CASES": "Хөдөлмөр зуучлалын төвийн дугаар",
+        "NEW_MESSAGE": "Шинээр мэдэгдэл оруулах",
+        "TO": "Хэнд",
+        "REPLY": "Хариулах",
+        "TO_PRA": "PRA нэр",
+        "TO_MANAGER": "Менежерийн нэрийг оруулна уу",
+        "SUBJECT": "Гарчиг",
+        "SUBJECT_PLACEHOLDER": "Гарчиг оруулах",
+        "MESSAGE_PLACEHOLDER": "Мэдэгдэл оруулах",
+        "BTN_CHOOSE_FILE": "Файл сонгох",
+        "BTN_SEND": "Илгээх",
+        "BTN_CANCEL": "Цуцлах",
+        "REPLY_MESSAGE": "Шинээр мэдэгдэл оруулах",
+        "ALL_CASES": "Бүх тохиолдол",
+        "ERROR_RECEIVER": "Хүлээн авагчийн И-мэйл хаяг оруулна уу!",
+        "ERROR_SUBJECT": "И-мэйлийн гарчиг оруулна уу!",
+        "ERROR_MESSAGE": "И-мэйл агуулга оруулна уу!",
+        "ERROR_MESSAGE_MAXSIZE": "Таны файл хамгийн дээд хэмжээнд хүрсэн. 2MB-ээс бага хэмжээтэй файл байршуулна уу, эс тэгвэл таны файл хүлээн авагч руу хүрэхгүй байна.",
+        "ERROR_MESSAGE_FILE_TYPE": "Таны файл зөв хэлбэртэй байна."
+    },
+    "DOCUMENT": {
+        "TITLE": "Бичиг баримт",
+        "PRINCIPLE": "Зарчим",
+        "QUESTION": "Асуулт"
+    },
+    "LOGIN": {
+        "TITLE": "Нэвтрэх",
+        "RESET_PASSWORD": "НУУЦ ҮГ МАРТСАН?",
+        "EMAIL": {
+            "TITLE": "И-мэйл",
+            "ERROR": {
+                "REQUIRED": "И-мэйл хаяг оруулах шаардлагатай.",
+                "EXPECTED": "И-мэйл хаяг хүлээгдэж байн."
+            }
+        },
+        "PASSWORD": {
+            "TITLE": "Нууц үг",
+            "ERROR": {
+                "REQUIRED": "Нууц үг оруулах шаардлагатай."
+            }
+        },
+        "RESET_PASSWORD_NOTI": {
+            "TITLE": "ТАНЫ НУУЦ ҮГИЙГ БУУРУУЛСАН",
+            "CONTENT": "Таны IRIS SAFER нууц үгийг амжилттай шинэчиллээ. Шинэ нууц үгээ ашиглан IRIS SAFER руу нэвтрэхийн тулд доорх товчлуур дээр дарна уу."
+        },
+        "FORGOT_PASSWORD": {
+            "CONTENT": "Таны IRIS аюулгүй нууц үгийг шинэчлэхэд зааварчилгаа таны и-мэйл хаяг руу илгээсэн байна"
+        }
+    },
+    "RESET_PASSWORD": {
+        "TITLE": "НУУЦ ҮГ СЭРГЭЭХ",
+        "GUIDE": "Доорхи зайнд и-мэйл хаягаа оруулна уу. ИРИС СЭЙФЕР-ийн нууц үг сэргээх заавар танд удахгүй илгээх болно.",
+        "USERNAME": "ХЭРЭГЛЭГЧИЙН НЭР/ И-МЭЙЛ ХАЯГ",
+        "EMAIL": {
+            "PLACEHOLDER": "И-мэйл хаягаа оруулна уу"
+        }
+    },
+    "ONBOARDING": {
+        "TITLE": "ИРИС СЭЙФЕР-т тавтай морилно уу",
+        "INSTRUCTION_PRA": "Цааш үргэлжлүүлэхийн тулд нууц үг оруулж баталгаажуулна уу.ИРИС СЭЙФЕР-ийг ашиглахын тулд тавигдах нөхцөлүүдийг хүлээн зөвшөөрөх шаардлагатай. Үүний тулд нөхцөлүүдийг сайтар уншиж танилцаад баталгаажуулах хэсэгт чагтална уу. Дараагаар нь доорх товчлуур дээр дарж бүртгэлээ дуусгана уу.",
+        "NAME": "Нэр",
+        "SURNAME": "Овог",
+        "EMAIL": "И-мэйл",
+        "PASSWORD": {
+            "TITLE": "Нууц үг",
+            "REQUIRED": "Нууц үг оруулна уу."
+        },
+        "REENTER_PASSWORD": "Нууц үг дахин оруулна уу",
+        "LANGUAGE": "ХЭЛ",
+        "T&C": "Нөхцөлүүдийг хүлээж зөвшөөрч байгаагаа баталгаажуулна уу",
+        "COMPLETE_ONBOARDING": "Бүртгэл дуусгах",
+        "COMPLETE_REGISTRATION": {
+            "TITLE": "ИРИС СЭЙФЕР-ийн бүртгэл дууссан",
+            "CONTENT": "Та ИРИС СЭЙФЕР-ийн бүртгэлээ дуусгалаа. Бүртгүүлсэн И-мэйл хаяг болон нууц үгээ ашиглан нэвтэрч орно уу.",
+            "CLOSE_BTN": "Хаах"
+        }
+    },
+    "T&C": {
+        "TITLE": "Mongolian: TECHNOLOGY VENDOR TERMS & CONDITION"
+    },
+    "ERRORMESSAGE": {
+        "USER_NOT_AUTH": "Хэрэглэгч нэвтрүүлдэг байна.",
+        "ON_BOARDING": "Хэрэглэгчийн байдлыг onboarding байдаг, нэвтрэлт өмнө onboarding үйл ажиллагаа дууссаны уу.",
+        "INCORRECT_PASS": "Нууц үг тохирсонгүй.",
+        "USER_NOT_EXIST_PASS": "байхгүй бол хэрэглэгчийн, нууц үгийг шинэчилж чадахгүй.",
+        "PASS_RESET_LINK_EXP": "Нууц үг дахин холбоос аль хэдийн, шинэ холбоос дахин хүсэлт уу хугацаа нь дууссан байна.",
+        "USER_NOT_EXIST": "Хэрэглэгч байхгүй байна.",
+        "USER_NOT_EXIST_ONBOARDING": "Хэрэглэгч бүрэн чадахгүй байгаа үйл явцыг onboarding байхгүй байна.",
+        "IOM_EMAIL_NOT_BLANK": "ОУШХБ и-мэйл хоосон байж болохгүй.",
+        "AGENCY_NAME_NOT_BLANK": "Агентлаг нэр хоосон байж болохгүй.",
+        "AGENCY_NOT_BLANK": "Агентлаг байхгүй байна",
+        "PRA_EMAIL_NOT_BLANK": "Оролцооны ийм и-мэйл хоосон байж болохгүй.",
+        "PRA_HAS_ONE_USER": "Оролцооны ийм агентлаг зөвхөн нэг хэрэглэгч байж болно.",
+        "CASE_OWNER_NOT_EXIST": "Тохиолдол эзэн байхгүй.",
+        "CREATE_ASS_BEFORE_CREATE_PRA": "Шинэ оролцооны ийм хэрэглэгчийг бий болгох өмнө өөрийгөө үнэлгээг бий болгох уу.",
+        "PRA_NOT_EXIST_ONBOARDING": "Оролцооны ийм Хэрэглэгч бүрэн чадахгүй байгаа үйл явцыг onboarding байхгүй байна.",
+        "USER_NOT_QUESTION_RES": "Хэрэглэгч болохгүй вэ questionnaireResponse",
+        "COUNTRY_OFF_NOT_EXIST": "Улс албан байхгүй байна.",
+        "NOT_ALLOW_CORS": "Хүлээн авалтын баталгаажуулалт хамт байж болохгүй",
+        "QUESTION_ID_MISS": "Асуулт ID байхгүй байна.",
+        "NAME_NOT_BLANK": "Нэр нь хоосон байж болохгүй.",
+        "USER_UN_AUTH": "Хэрэглэгч нь баталгаажаагүй байна.",
+        "BAD_ERR": "муу алдаа",
+        "ERR_EMAIL": "{p0} аль хэдийн IRIS аюулгүй нэмэгдсэн байна.",
+        "ERR_COUNTRY": "Улс албан байхгүй байна.",
+        "AGENCY_USER_NOT_BLANK": "Агентлаг хэрэглэгч байхгүй",
+        "ERR_EMAIL_ALREADY_USED": "{p0} аль хэдийн ашиглаж байна.",
+        "FAIL_TO_FINALIZE_SCORE": "оноог эцэслэн чадахгүй. Бичиг баримт хэрэглэгчийн байршуулсан эсвэл гоол өөр гоол байна.",
+        "SENT_QUESTIONNAIRE_NOT_FOUND": "Явсан асуулга, олж чадахгүй ID: {p0}.",
+        "AGENCY_ALREADY_EXISTS": "Оролцооны ийм агентлаг {p0}, аль хэдийн байна.",
+        "FILE_NOT_CORRECT_FILE_TYPE": "{p0} нь зөв файлын төрөл байна.",
+        "QUESTIONNAIRE_RESPONSE_NOT_FOUND": "Асуулга хариу олж чадахгүй ID: {p0}.",
+        "QUESTIONNAIRE_NOT_FOUND": "Асуулга, олж чадахгүй ID: {p0}.",
+        "QUESTIONNAIRE_RESPONSE_QUESTION_NOT_FOUND": "Асуулга хариу асуулт, олж чадахгүй байгаа асуулт ID: {p0}.",
+        "CONFIG_VALIDATION_ERROR": "Config баталгаажуулалтын алдаа: {p0}",
+        "PASSWORD_PATTERN": "Нууц үг наад зах нь нэг үсгийн жижиг, нэг том үсгээр, нэг тоо зэрэг наад зах нь 8 тэмдэгт агуулсан байх ёстой.",
+        "PASSWORD_MISMATCH_CONFIRM_PASSWORD": "Шинэ нууц үг баталгаа нууц үгээ таарахгүй биш, шинэ нууц үгийг шинэчилж чадахгүй.",
+        "INCORRECT_PASSWORD": "Одоогийн нууц үг буруу байна, шинэ нууц үгийг шинэчилж чадахгүй.",
+        "REUSE_PASSWORD": "Шинэ нууц үг одоогийн нууц үг, өөр нэгийг нь сонгоно уу адил байна.",
+        "MISSING_FORGOT_PASSWORD_REQ_ID": "Нууц үг дахин ID байхгүй байна.",
+        "USER_EMAIL_NOT_FOUND": "Хэрэглэгчийн и-мэйл Нууц үг шинэчлэх хүсэлтийг нь олж чадахгүй байна. Авагч ID:",
+        "INVALID_ROLE": "Хэрэглэгч нь ОУШХБ хэрэглэгч биш юм.",
+        "INVALID_STATUS": "Хэрэглэгчийн аль хэдийн устгасан байна.",
+        "CURRENTLY_LOGGED_IN": "Одоогоор хэрэглэгч нэвтрээгүй устгаж болохгүй байх ёстой.",
+        "CASEWORKER_STATUS": "Хэрэглэгч нь хэрэг ажилтан, данс устгах боломжгүй байна.",
+        "SCORER_STATUS": "Хэрэглэгч нь мэргэн бууч юм, дансны устгах боломжгүй байна.",
+        "INVALID_RECIPIENT_ERROR": "Та энэ санал асуулгад томилогдсон байна.",
+        "NOT_PENDING_STATUS_ERROR": "Энэ асуулгын хариу хүлээж статустай байна.",
+        "NOT_BELONG_QUESTIONNAIRE_RESPONSE_ERROR": "Энэ асуулгын хариу асуулт энэ асуулгын хариу биш.",
+        "INVALID_STATUS_ERROR": "Төлөв хүлээгдэж байгаа, эсвэл дууссан байх ёстой.",
+        "UNMATCHED_QUESTIONNAIRE_ID_ERROR": "Асуулга ID таарахгүй байна.",
+        "INCORRECT_SUBMITTER_ERROR": "Та энэ асуулгыг гаргаж өгсөн байна.",
+        "UNAUTHORIZED_VIEW_SUBMISSIONS_ERROR": "Та санал асуулгын хариу ирүүлсэн үзэх эрхгүй байна.",
+        "UNAUTHORIZED_VIEW_SUBMISSION_ERROR": "Та энэ ирүүлэх агуулгыг үзэх эрхгүй байна.",
+        "INVALID_SUBMISSION_STATUS_ERROR": "Энэ асуулгын хариу ирүүлэх байдлыг бүрэн байхгүй байна.",
+        "UNAUTHORIZED_DOWNLOAD_ERROR": "Та файлыг татаж авах эрхгүй байна.",
+        "FILE_URL_MISSING_ERROR": "Файл URL татаж авах файлын чадахгүй, сураггүй алга болсон байна.",
+        "FILE_NAME_MISSING_ERROR": "Файлын нэр татаж авах файлын чадахгүй, сураггүй алга болсон байна.",
+        "UNAUTHORIZED_SEND_REMINDER_EMAIL_ERROR": "Та сануулах и-мэйл илгээх эрхгүй байна",
+        "REMINDER_EMAIL_IGNORED": "Энэ санал асуулгын хариу ирүүлсэн илгээх сануулах и-мэйл хориотой байдаг байна.",
+        "FILE_NOT_FOUND_ERROR": "{p0} татаж авах файлын чадахгүй, олж чадаагүй байна.",
+        "ERR_EMAIL_INVALID": "Зөв и-мэйл байх ёстой",
+        "PRA_AGENCY_MAX_LENGTH": "Оролцооны ийм агентлаг нэрийг хамгийн их урт нь 100 байдаг.",
+        "INVALID_LOGIN": "Буруу нэвтрэх",
+        "INVALID_ROLE_DTO": "Буруу үүрэг",
+        "FIRST_NAME_MAX_LENGTH": "Эхний нэрийг хамгийн их урт нь 100"
+    },
+    "CONFIRMCANCELDIALOG": {
+        "TITLE": "Баталгаажуулах",
+        "CONTENT": "Оруулсан өөрчлөлтүүдээ цуцлахдаа итгэлтэй байна уу?",
+        "DISCARD": "Цуцдах",
+        "CONFIRM": "Баталгаажуулах",
+        "CANCEL": "Цуцлах"
+    }
+}

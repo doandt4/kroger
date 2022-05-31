@@ -1,0 +1,14 @@
+.main-modal .user-form {
+	padding: 0 92px;
+}
+
+.mid-button {
+	span {
+		padding-left: 5px;
+	}
+}
+
+::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+	stroke: #ffffff;
+}

@@ -1,0 +1,65 @@
+<div class="main-modal">
+    <div class="mx-auto flex-grow-1 mid-login">
+        <div class="mid-heading">
+            <h3 class="mid-title">Please Login</h3>
+            <span class="mid-sub-title">Login to manage your account</span>
+        </div>
+        <div class="user-form login-form pb-5">
+            <div [formGroup]="loginForm">
+                <div class="form-shadow mx-4 mx-xl-0">
+                    <div class="form-group-custom">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-icon"><i class="icon-mail"></i></div>
+                            </div>
+                            <div class="input-group-control flex-grow-1">
+                                <label>Email address</label>
+                                <input formControlName="email" type="text" class="form-control" name="email"
+                                    placeholder="Your Email address" (blur)="trimValue('email')"/>
+                            </div>
+                        </div>
+                        <mat-error *ngIf="validateForm('email','required')">
+                            The email field is required
+                        </mat-error>
+                        <mat-error *ngIf="validateForm('email','email')">
+                            This is not a valid email
+                        </mat-error>
+                    </div>
+                    <div class="form-group-custom form-group-password mb-0">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-icon"><i class="icon-key"></i></div>
+                            </div>
+                            <div class="input-group-control flex-grow-1">
+                                <label>Password</label>
+                                <input formControlName="password" [type]="isShowPassword ? 'text' : 'password'"
+                                    class="form-control" name="password" placeholder="Password" />
+                            </div>
+                            <div class="input-group-append">
+                                <div class="input-group-icon toggle-password">
+                                    <i (click)="this.isShowPassword = !this.isShowPassword"
+                                        class="{{ isShowPassword ? 'icon-eye-off' : 'icon-eye' }}"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-error *ngIf="validateForm('password','required')">
+                            The password field is required
+                        </mat-error>
+                    </div>
+                </div>
+                <div class="form-action d-flex justify-content-between align-items-center px-4 mt-lg-4 mt-3 mb-3">
+                    <div class="form-check pl-0">
+                        {{loginError$ | async}}
+                    </div>
+                </div>
+                <div
+                    class="form-button d-flex flex-column flex-lg-row flex-column-reverse justify-content-between align-items-center">
+                    <button (click)="login()" class="mid-button">LOGIN</button>
+                </div>
+                <div class="form-link mt-2 align-items-center">
+                    <a (click)="forgot()" class="cursor-pt hover-color">Forgot your password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

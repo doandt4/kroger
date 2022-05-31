@@ -1,0 +1,48 @@
+:host {
+    display: block;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-card-header {
+    justify-content: center;
+}
+
+mat-card {
+    padding: 2rem;
+}
+
+mat-form-field,
+mat-card-header {
+    margin-bottom: 1rem;
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+.align-items-center {
+    display: flex;
+    justify-content: center !important;
+}
+
+.mt-2 {
+    margin-top: 2rem !important;
+}
+
+.toggle-password {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-check {
+    font-weight: bold;
+    color: #3e3f42;
+}
+
+.hover-color:hover {
+    color: #d86236 !important;
+}

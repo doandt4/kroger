@@ -1,0 +1,279 @@
+<style>
+    .cdk-overlay-container {
+        z-index: 9 !important;
+    }
+</style>
+<div class="main-modal">
+    <div class="user-form mx-auto mb-3">
+        <div class="mid-heading" [ngClass]="type ? 'header-model-cr' : ''">
+            <a (click)="dialogRef.close()" class="close-modal position-absolute" data-dismiss="modal">
+                <i class="icon-close"></i>
+            </a>
+            <h3 class="mid-title">{{ type ? mes_form : 'Register' }}</h3>
+            <span class="mid-sub-title">{{
+                type
+                    ? 'Please enter your detail Informations to create a new account'
+                    : 'Please enter your detail Informations to register a new account'
+            }}</span>
+        </div>
+        <div>
+            <div class="form-shadow mx-4 mx-xl-0 px-5">
+                <div [formGroup]="registerForm">
+                    <div class="row">
+                        <div class="col-12 col-lg">
+                            <div class="form-group-custom">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-icon"><i class="icon-person"></i></div>
+                                    </div>
+                                    <div class="input-group-control flex-grow-1">
+                                        <label>Username</label>
+                                        <input
+                                            formControlName="username"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Username"
+                                            (blur)="trimValue('username')"
+                                            maxlength="100"
+                                        />
+                                    </div>
+                                </div>
+                                <mat-error *ngIf="validateForm('username', 'required')">
+                                    The username field is required
+                                </mat-error>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg email-container">
+                            <div class="form-group-custom">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-icon"><i class="icon-mail"></i></div>
+                                    </div>
+                                    <div class="input-group-control flex-grow-1">
+                                        <label>Email address</label>
+                                        <input
+                                            formControlName="email"
+                                            type="text"
+                                            class="form-control"
+                                            name="email"
+                                            placeholder="Your Email address"
+                                            [attr.disabled]="type == 'edit_user' ? '' : null"
+                                        />
+                                    </div>
+                                </div>
+                                <mat-error *ngIf="validateForm('email', 'required')">
+                                    The email field is required
+                                </mat-error>
+                                <mat-error *ngIf="validateForm('email', 'email')">
+                                    This is not a valid email
+                                </mat-error>
+                                <mat-error *ngIf="validateForm('email', 'exist')">
+                                    This email is already linked to an existing account
+                                </mat-error>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg">
+                            <div class="form-group-custom">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-icon"><i class="icon-edit"></i></div>
+                                    </div>
+                                    <div class="input-group-control flex-grow-1">
+                                        <label>First name</label>
+                                        <input
+                                            formControlName="firstName"
+                                            type="text"
+                                            class="form-control"
+                                            maxlength="100"
+                                            name="first-name"
+                                            placeholder="First name"
+                                            (blur)="trimValue('firstName')"
+                                        />
+                                    </div>
+                                </div>
+                                <mat-error *ngIf="validateForm('firstName', 'required')">
+                                    The first name field is required
+                                </mat-error>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg">
+                            <div class="form-group-custom">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-icon"><i class="icon-layers"></i></div>
+                                    </div>
+                                    <div class="input-group-control flex-grow-1">
+                                        <label>Last Name</label>
+                                        <input
+                                            formControlName="lastName"
+                                            type="text"
+                                            class="form-control"
+                                            maxlength="100"
+                                            name="last-name"
+                                            placeholder="Last Name"
+                                            (blur)="trimValue('lastName')"
+                                        />
+                                    </div>
+                                </div>
+                                <mat-error *ngIf="validateForm('lastName', 'required')">
+                                    The last name field is required
+                                </mat-error>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row password-container">
+                        <div class="col-12 col-lg">
+                            <div class="form-group-custom form-group-password mb-0">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-icon"><i class="icon-key"></i></div>
+                                    </div>
+                                    <div class="input-group-control flex-grow-1">
+                                        <label>Password</label>
+                                        <input
+                                            formControlName="password"
+                                            [type]="isShowPassword ? 'text' : 'password'"
+                                            class="form-control"
+                                            placeholder="Password"
+                                            [attr.disabled]="type == 'edit_user' ? '' : null"
+                                        />
+                                    </div>
+                                    <div class="input-group-append">
+                                        <div class="input-group-icon toggle-password">
+                                            <i
+                                                (click)="this.isShowPassword = !this.isShowPassword"
+                                                class="{{ isShowPassword ? 'icon-eye-off' : 'icon-eye' }}"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <mat-error *ngIf="validateForm('password', 'required')">
+                                    The password field is required
+                                </mat-error>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg">
+                            <div class="form-group-custom form-group-password mb-0">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-icon"><i class="icon-key"></i></div>
+                                    </div>
+                                    <div class="input-group-control flex-grow-1">
+                                        <label>Repeat Password</label>
+                                        <input
+                                            formControlName="repeatPassword"
+                                            [type]="isShowRepeatPassword ? 'text' : 'password'"
+                                            class="form-control"
+                                            name="re-password"
+                                            placeholder="Repeat Password"
+                                            [attr.disabled]="type == 'edit_user' ? '' : null"
+                                        />
+                                    </div>
+                                    <div class="input-group-append">
+                                        <div class="input-group-icon toggle-password">
+                                            <i
+                                                (click)="this.isShowRepeatPassword = !this.isShowRepeatPassword"
+                                                class="{{ isShowRepeatPassword ? 'icon-eye-off' : 'icon-eye' }}"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <mat-error *ngIf="validateForm('repeatPassword', 'required')">
+                                    Please repeat your password
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="
+                                        validateForm('repeatPassword', 'passwordNotMatch') &&
+                                        !validateForm('repeatPassword', 'required')
+                                    "
+                                >
+                                    Your passwords do not match
+                                </mat-error>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="type" style="padding-top: 2rem;">
+                    <div class="col-6 col-lg">
+                        <div [formGroup]="roleControl" class="form-group form-group--multiselect mb-0">
+                            <div class="input-group align-items-start">
+                                <div class="input-group-prepend d-flex align-items-baseline">
+                                    <div class="input-group-icon"><i class="icon-settings"></i></div>
+                                </div>
+                                <mat-form-field appearance="fill" class="flex-grow-1">
+                                    <mat-label>Role</mat-label>
+                                    <mat-select
+                                        formControlName="role"
+                                        (selectionChange)="chooseRole()"
+                                        placeholder="Role"
+                                        [(ngModel)]="dataFormEdit['role']"
+                                        [compareWith]="compareFn"
+                                        [disabled]="type == 'edit_user'"
+                                    >
+                                        <mat-option *ngFor="let role of lstRole" [value]="role">
+                                            {{ role.name }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <div [formGroup]="qcControl" class="form-group form-group--multiselect mb-0">
+                            <div class="input-group align-items-start" *ngIf="roleControl?.value?.role?.type == 'user'">
+                                <div class="input-group-prepend d-flex align-items-baseline">
+                                    <div class="input-group-icon"><i class="icon-check-circle"></i></div>
+                                </div>
+                                <mat-form-field appearance="fill" class="flex-grow-1">
+                                    <mat-label>Select QC</mat-label>
+                                    <mat-select
+                                        formControlName="qcId"
+                                        placeholder="Select QC"
+                                        [disabled]="type == 'edit_user'"
+                                    >
+                                        <mat-option *ngFor="let qc of lstQC" [value]="qc.id">
+                                            {{ qc.firstname + ' ' + qc.lastname }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-mocal">
+            <div *ngIf="!type" class="form-action d-flex justify-content-between px-4 mt-lg-4 mt-3 mb-3">
+                <div class="form-check pl-0 mt-3">
+                    <input
+                        type="checkbox"
+                        class="form-check-input form-check-input--minimal"
+                        [checked]="isChecked"
+                        (change)="checkValue()"
+                        id="accept-terms"
+                        name="accept-terms"
+                    />
+                    <label class="form-check-label accent-color font-weight-normal" for="accept-terms"
+                        >Accept <strong class="ml-1 mr-1">MIDASMOON</strong> terms of services.</label
+                    >
+                </div>
+            </div>
+            <div
+                class="form-button d-flex flex-column flex-lg-row align-items-center"
+                [ngClass]="type ? 'justify-content-end pt-5' : 'justify-content-between'"
+            >
+                <div *ngIf="!type" class="form-link">
+                    <a (click)="backToLogin()" class="font-weight-normal link-register cursor-pt">
+                        Already have an account?
+                        <strong>Login Now</strong>
+                    </a>
+                </div>
+                <button [disabled]="checkShowBtn()" (click)="register()" class="mid-button mt-4 mt-lg-0">
+                    {{ type ? mes_form : 'REGISTER' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
