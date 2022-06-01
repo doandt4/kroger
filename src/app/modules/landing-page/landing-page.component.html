@@ -1,12 +1,51 @@
-<div class="home text-center">
-  <p class="text-center">Download CSV</p>
+<div class="home text-center pt-5">
+  <h2 class="text-center">EXPORT CSV</h2>
   <form class="example-form d-flex justify-content-center">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Search</mat-label>
-      <input matInput placeholder="..." [(ngModel)]="searchValue" name="search" minlength="3" />
+      <input
+        matInput
+        placeholder="..."
+        [(ngModel)]="searchValue"
+        name="search"
+        minlength="3"
+      />
     </mat-form-field>
   </form>
-  <button mat-raised-button color="primary" (click)="download()" [disabled]="isLoadingToken">
-    {{isLoadingToken ? 'Loading Token' : 'Download CSV'}}
+  <p>
+    {{
+      searchValue.length < 3
+        ? "length search value must be greater than 2 character"
+        : ""
+    }}
+  </p>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="download('all')"
+    [disabled]="isLoadingToken || isLoading"
+  >
+    {{
+      isLoadingToken
+        ? "Loading Token"
+        : isLoading
+        ? "Generate CSV"
+        : "Download CSV By Search"
+    }}
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="download('brand')"
+    [disabled]="isLoadingToken || isLoading"
+    class="ml-5"
+  >
+    {{
+      isLoadingToken
+        ? "Loading Token"
+        : isLoading
+        ? "Generate CSV"
+        : "Download CSV By Brand"
+    }}
   </button>
 </div>
