@@ -45,7 +45,7 @@ export class CampaignService {
     });
     return this.httpIgnore
       .get(
-        `${this.url}/?filter.term=${query}&filter.start=${start}&filter.limit=50`,
+        `${this.url}/?filter.term=${query}&filter.start=${start}&filter.limit=50&filter.locationId=01400943`,
         {
           headers,
         }
