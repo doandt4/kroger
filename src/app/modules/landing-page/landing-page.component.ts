@@ -26,8 +26,8 @@ export class LandingPageComponent implements OnInit {
     fieldSeparator: ",",
     quoteStrings: '"',
     decimalseparator: ".",
-    showLabels: true,
-    showTitle: true,
+    showLabels: false,
+    showTitle: false,
     title: "Your title",
     useBom: true,
     noDownload: false,
@@ -129,12 +129,14 @@ export class LandingPageComponent implements OnInit {
   }
 
   download(type: "all" | "brand") {
-    this.page = 1;
-    this.start = 1;
-    this.totalPage = 1;
-    this.data = [];
-    this.isLoading = true;
-    this.searchProduct(type);
+    if (this.searchValue.length >= 3) {
+      this.page = 1;
+      this.start = 1;
+      this.totalPage = 1;
+      this.data = [];
+      this.isLoading = true;
+      this.searchProduct(type);
+    }
   }
 
   async refreshToken() {
