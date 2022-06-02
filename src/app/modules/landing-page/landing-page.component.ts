@@ -11,7 +11,7 @@ import * as moment from "moment";
   styleUrls: ["./landing-page.component.scss"],
 })
 export class LandingPageComponent implements OnInit {
-  searchValue: string = "foo";
+  searchValue: string = "";
   accessToken: string = "";
 
   data = [];
@@ -282,7 +282,7 @@ export class LandingPageComponent implements OnInit {
     if (type === "all") {
       new AngularCsv(
         this.data,
-        `${moment().format("YYYYMMDDkkmmss")}${this.searchValue}`,
+        `${moment().format("YYYYMMDDkkmmss")}_${this.searchValue}`,
         this.options
       );
     }
@@ -291,7 +291,7 @@ export class LandingPageComponent implements OnInit {
       for (const property in listGroupBrand) {
         new AngularCsv(
           listGroupBrand[property],
-          `${moment().format("YYYYMMDDkkmmss")}${property}`,
+          `${moment().format("YYYYMMDDkkmmss")}_${property}`,
           this.options
         );
       }
