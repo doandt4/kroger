@@ -1,18 +1,18 @@
-import { HttpErrorResponse } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
-import { AngularCsv } from "angular-csv-ext/dist/Angular-csv";
-import { CampaignService } from "../shared/services";
-import { uniqBy, groupBy } from "lodash";
-import * as moment from "moment";
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
+import { CampaignService } from '../shared/services';
+import { uniqBy, groupBy } from 'lodash';
+import * as moment from 'moment';
 
 @Component({
-  selector: "app-landing-page",
-  templateUrl: "./landing-page.component.html",
-  styleUrls: ["./landing-page.component.scss"],
+  selector: 'app-landing-page',
+  templateUrl: './landing-page.component.html',
+  styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
-  searchValue: string = "";
-  accessToken: string = "";
+  searchValue: string = '';
+  accessToken: string = '';
 
   data = [];
   isLoadingToken = false;
@@ -23,102 +23,102 @@ export class LandingPageComponent implements OnInit {
   totalPage: number = 1;
 
   options = {
-    fieldSeparator: ",",
+    fieldSeparator: ',',
     quoteStrings: '"',
-    decimalseparator: ".",
+    decimalseparator: '.',
     showLabels: false,
     showTitle: false,
-    title: "Your title",
+    title: 'Your title',
     useBom: true,
     noDownload: false,
     useHeader: false,
     nullToEmptyString: true,
     headers: [
-      "ID",
-      "Type",
-      "SKU",
-      "Name",
-      "Published",
-      "Is featured?",
-      "Visibility in catalog",
-      "Short description",
-      "Description",
-      "Date sale price starts",
-      "Date sale price ends",
-      "Tax status",
-      "Tax class",
-      "In stock?",
-      "Stock",
-      "Low stock amount",
-      "Backorders allowed?",
-      "Sold individually?",
-      "Weight(lbs)",
-      "Length(in)",
-      "Width(in)",
-      "Height(in)",
-      "Allow customer reviews?",
-      "Purchase note",
-      "Sale price",
-      "Regular price",
-      "Categories",
-      "Tags",
-      "Shipping class",
-      "Images",
-      "Download limit",
-      "Download expiry days",
-      "Parent",
-      "Grouped products",
-      "Upsells",
-      "Cross-sells",
-      "External URL",
-      "Button text",
-      "Position",
-      "Google product feed: Product description",
-      "Google product feed: Availability",
-      "Google product feed: Bundle indicator(is_bundle)",
-      "Google product feed: Availability date",
-      "Google product feed: Condition",
-      "Google product feed: Brand",
-      "Google product feed: Manufacturer Part Number(MPN)",
-      "Google product feed: Product Type",
-      "Google product feed: Google Product Category",
-      "Google product feed: Global Trade Item Number(GTIN)",
-      "Google product feed: Gender",
-      "Google product feed: Age Group",
-      "Google product feed: Colour",
-      "Google product feed: Size",
-      "Google product feed: Size type",
-      "Google product feed: Size system",
-      "Google product feed: Unit pricing measure",
-      "Google product feed: Unit pricing base measure",
-      "Google product feed: Multipack",
-      "Google product feed: Instalment",
-      "Google product feed: Material",
-      "Google product feed: Pattern",
-      "Google product feed: Adult content",
-      "Google product feed: Identifier exists flag",
-      "Google product feed: Adwords grouping filter",
-      "Google product feed: Adwords labels",
-      "Google product feed: Bing Category",
-      "Google product feed: Delivery label",
-      "Google product feed: Minimum handling time",
-      "Google product feed: Maximum handling time",
-      "Google product feed: Energy efficiency class",
-      "Google product feed: Minimum energy efficiency class",
-      "Google product feed: Maximum energy efficiency class",
-      "Google product feed: Cost of goods sold",
-      "Google product feed: Included destination",
-      "Google product feed: Excluded destination",
-      "Google product feed: Custom label 0",
-      "Google product feed: Custom label 1",
-      "Google product feed: Custom label 2",
-      "Google product feed: Custom label 3",
-      "Google product feed: Custom label 4",
-      "Google product feed: Promotion ID",
-      "Google product feed: Bing shipping info(price only)",
-      "Google product feed: Bing shipping info(country and price)",
-      "Google product feed: Bing shipping info(country service and price)",
-      "Google product feed: Hide product from feed(Y/N)",
+      'ID',
+      'Type',
+      'SKU',
+      'Name',
+      'Published',
+      'Is featured?',
+      'Visibility in catalog',
+      'Short description',
+      'Description',
+      'Date sale price starts',
+      'Date sale price ends',
+      'Tax status',
+      'Tax class',
+      'In stock?',
+      'Stock',
+      'Low stock amount',
+      'Backorders allowed?',
+      'Sold individually?',
+      'Weight(lbs)',
+      'Length(in)',
+      'Width(in)',
+      'Height(in)',
+      'Allow customer reviews?',
+      'Purchase note',
+      'Sale price',
+      'Regular price',
+      'Categories',
+      'Tags',
+      'Shipping class',
+      'Images',
+      'Download limit',
+      'Download expiry days',
+      'Parent',
+      'Grouped products',
+      'Upsells',
+      'Cross-sells',
+      'External URL',
+      'Button text',
+      'Position',
+      'Google product feed: Product description',
+      'Google product feed: Availability',
+      'Google product feed: Bundle indicator(is_bundle)',
+      'Google product feed: Availability date',
+      'Google product feed: Condition',
+      'Google product feed: Brand',
+      'Google product feed: Manufacturer Part Number(MPN)',
+      'Google product feed: Product Type',
+      'Google product feed: Google Product Category',
+      'Google product feed: Global Trade Item Number(GTIN)',
+      'Google product feed: Gender',
+      'Google product feed: Age Group',
+      'Google product feed: Colour',
+      'Google product feed: Size',
+      'Google product feed: Size type',
+      'Google product feed: Size system',
+      'Google product feed: Unit pricing measure',
+      'Google product feed: Unit pricing base measure',
+      'Google product feed: Multipack',
+      'Google product feed: Instalment',
+      'Google product feed: Material',
+      'Google product feed: Pattern',
+      'Google product feed: Adult content',
+      'Google product feed: Identifier exists flag',
+      'Google product feed: Adwords grouping filter',
+      'Google product feed: Adwords labels',
+      'Google product feed: Bing Category',
+      'Google product feed: Delivery label',
+      'Google product feed: Minimum handling time',
+      'Google product feed: Maximum handling time',
+      'Google product feed: Energy efficiency class',
+      'Google product feed: Minimum energy efficiency class',
+      'Google product feed: Maximum energy efficiency class',
+      'Google product feed: Cost of goods sold',
+      'Google product feed: Included destination',
+      'Google product feed: Excluded destination',
+      'Google product feed: Custom label 0',
+      'Google product feed: Custom label 1',
+      'Google product feed: Custom label 2',
+      'Google product feed: Custom label 3',
+      'Google product feed: Custom label 4',
+      'Google product feed: Promotion ID',
+      'Google product feed: Bing shipping info(price only)',
+      'Google product feed: Bing shipping info(country and price)',
+      'Google product feed: Bing shipping info(country service and price)',
+      'Google product feed: Hide product from feed(Y/N)',
     ],
   };
 
@@ -126,9 +126,28 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
     this.refreshToken();
+    // this.campaignService
+    //   .convertWebpToJpg(
+    //     'https://www.kroger.com/product/images/large/front/0004122631081'
+    //   )
+    //   .subscribe((res: any) => {
+    //     console.log(res);
+    //   });
+    // this.toDataURL(
+    //   'https://www.kroger.com/product/images/large/front/0004122631081',
+    //   (dataUrl) => {
+    //     this.campaignService
+    //       .convertWebpToJpgBase64(
+    //         dataUrl.replace('data:image/webp;base64,', '')
+    //       )
+    //       .subscribe((res: any) => {
+    //         console.log(res.Files[0].Url);
+    //       });
+    //   }
+    // );
   }
 
-  download(type: "all" | "brand") {
+  download(type: 'all' | 'brand') {
     if (this.searchValue.length >= 3) {
       this.page = 1;
       this.start = 1;
@@ -147,7 +166,21 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
-  searchProduct(type: "all" | "brand") {
+  toDataURL(url: any, callback: any) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        callback(reader.result);
+      };
+      reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+  }
+
+  searchProduct(type: 'all' | 'brand') {
     this.campaignService
       .searchProduct(this.searchValue, this.accessToken, this.start)
       .subscribe(
@@ -155,21 +188,21 @@ export class LandingPageComponent implements OnInit {
           res.data.map((product: any) => {
             let result: any = {};
             result.id = `ItemGroup${product.productId}`;
-            result.type = "simple";
+            result.type = 'simple';
             result.sku = `\t${product.upc}`;
             result.name = `${product.description}`;
             result.published = 1;
             result.isFeatured = `\t0`;
-            result.visibilityInCatalog = "visible";
-            result.shortDescription = "";
+            result.visibilityInCatalog = 'visible';
+            result.shortDescription = '';
             result.description = `${product.description}`;
-            result.dateSalePriceStart = "";
-            result.dateSalePriceEnds = "";
-            result.taxStatus = "taxable";
-            result.taxClass = "";
+            result.dateSalePriceStart = '';
+            result.dateSalePriceEnds = '';
+            result.taxStatus = 'taxable';
+            result.taxClass = '';
             result.inStock = 1;
-            result.stock = "";
-            result.lowStockAmount = "";
+            result.stock = '';
+            result.lowStockAmount = '';
             result.backOrderAllowed = `\t0`;
             result.soldIndividually = `\t0`;
             result.weight = `\t0 pounds`;
@@ -177,79 +210,88 @@ export class LandingPageComponent implements OnInit {
             result.width = `\t${product.itemInformation.width || 0} inches`;
             result.height = `\t${product.itemInformation.height || 0} inches`;
             result.allowCustomerReviews = 1;
-            result.purchaseNote = "";
-            result.salePrice = "";
-            result.regularPrice = "";
+            result.purchaseNote = '';
+            result.salePrice = '';
+            result.regularPrice = '';
             // product.categories[0].replace(/\s/g, '');
-            result.categories = `\t${product.categories.join(", ")}`;
-            result.tags = "";
-            result.shippingClass = "";
-            result.images = "";
-            product.images.map((image: any) => {
-              let a = image.sizes.filter((size: any) => size.size === "large");
-              let b = a.map((x: any) => {
-                return x.url;
+            result.categories = `\t${product.categories.join(', ')}`;
+            result.tags = '';
+            result.shippingClass = '';
+            result.images = '';
+            product.images.slice(0, 1).map((image: any) => {
+              let a = image.sizes.filter((size: any) => size.size === 'large');
+              let b = a.map(async (x: any) => {
+                let dataUrl: any = await this.toDataURLPromise(x.url);
+                dataUrl = dataUrl.replace('data:image/webp;base64,', '');
+                dataUrl = dataUrl.replace('data:image/jpeg;base64,', '');
+                dataUrl = dataUrl.replace('data:image/png;base64,', '');
+                let convertedImg = await this.campaignService.convertWebpToJpgBase64(
+                  dataUrl
+                );
+                console.log(convertedImg);
+                return convertedImg;
+
+                // return x.url;
               });
               result.images = !result.images
-                ? result.images + b[0]
-                : result.images + "," + b[0];
+                ? result.images + b
+                : result.images + ',' + b;
             });
-            result.downloadLimit = "";
-            result.downloadExpiryDays = "";
-            result.parent = "";
-            result.groupedProducts = "";
-            result.upSells = "";
-            result.crossSells = "";
-            result.externalUrl = "";
-            result.buttonText = "";
+            result.downloadLimit = '';
+            result.downloadExpiryDays = '';
+            result.parent = '';
+            result.groupedProducts = '';
+            result.upSells = '';
+            result.crossSells = '';
+            result.externalUrl = '';
+            result.buttonText = '';
             result.position = `\t0`;
-            result.gpfProductDescription = "";
-            result.gpfAvailability = "";
-            result.gpfBundleIndicator = "";
-            result.gpfAvailabilityDate = "";
-            result.gpfCondition = "";
+            result.gpfProductDescription = '';
+            result.gpfAvailability = '';
+            result.gpfBundleIndicator = '';
+            result.gpfAvailabilityDate = '';
+            result.gpfCondition = '';
             result.gpfBrand = product.brand;
-            result.gpfManufacturePartNumber = "";
-            result.gpfProductType = "";
-            result.gpfGoogleProductCategory = "";
+            result.gpfManufacturePartNumber = '';
+            result.gpfProductType = '';
+            result.gpfGoogleProductCategory = '';
             result.gpfGlobalTradeItemNumber = `\t${product.upc}`;
-            result.gpfGender = "";
-            result.gpfAgeGroup = "";
-            result.gpfColor = "";
-            result.gpfSize = "";
-            result.gpfSizeType = "";
-            result.gpfSizeSystem = "";
-            result.gpfUnitPricingMeasure = "";
-            result.gpfUnitPricingBaseMeasure = "";
-            result.gpfMultipack = "";
-            result.gpfInstalment = "";
-            result.gpfMaterial = "";
-            result.gpfPattern = "";
-            result.gpfAdultContent = "";
-            result.gpfIdentifierExistsFlag = "";
-            result.gpfAdwordsGroupFilter = "";
-            result.gpfAdwordsLabels = "";
-            result.gpfBingCategory = "";
-            result.gpfDeliveryLabel = "";
-            result.gpfMinHandlingTime = "";
-            result.gpfMaxHandlingTime = "";
-            result.gpfEnergyEfficiencyClass = "";
-            result.gpfMinEnergyEfficiencyClass = "";
-            result.gpfMaxEnergyEfficiencyClass = "";
-            result.gpfCostOfGoodsSold = "";
-            result.gpfIncludedDestination = "";
+            result.gpfGender = '';
+            result.gpfAgeGroup = '';
+            result.gpfColor = '';
+            result.gpfSize = '';
+            result.gpfSizeType = '';
+            result.gpfSizeSystem = '';
+            result.gpfUnitPricingMeasure = '';
+            result.gpfUnitPricingBaseMeasure = '';
+            result.gpfMultipack = '';
+            result.gpfInstalment = '';
+            result.gpfMaterial = '';
+            result.gpfPattern = '';
+            result.gpfAdultContent = '';
+            result.gpfIdentifierExistsFlag = '';
+            result.gpfAdwordsGroupFilter = '';
+            result.gpfAdwordsLabels = '';
+            result.gpfBingCategory = '';
+            result.gpfDeliveryLabel = '';
+            result.gpfMinHandlingTime = '';
+            result.gpfMaxHandlingTime = '';
+            result.gpfEnergyEfficiencyClass = '';
+            result.gpfMinEnergyEfficiencyClass = '';
+            result.gpfMaxEnergyEfficiencyClass = '';
+            result.gpfCostOfGoodsSold = '';
+            result.gpfIncludedDestination = '';
             result.gpfExcludedDestination;
-            result.gpfCustomLabel_0 = "";
-            result.gpfCustomLabel_1 = "";
-            result.gpfCustomLabel_2 = "";
-            result.gpfCustomLabel_3 = "";
-            result.gpfCustomLabel_4 = "";
-            result.gpfPromotionId = "";
+            result.gpfCustomLabel_0 = '';
+            result.gpfCustomLabel_1 = '';
+            result.gpfCustomLabel_2 = '';
+            result.gpfCustomLabel_3 = '';
+            result.gpfCustomLabel_4 = '';
+            result.gpfPromotionId = '';
             result.gpfBingShippingInfoPrice;
-            result.gpfBingShippingInfoCountryPrice = "";
-            result.gpfBingShippingInfoCountryPriceService = "";
-            result.gpfHideProductFromFeed = "";
-
+            result.gpfBingShippingInfoCountryPrice = '';
+            result.gpfBingShippingInfoCountryPriceService = '';
+            result.gpfHideProductFromFeed = '';
             this.data.push(result);
           });
           this.totalPage = Math.ceil(res.meta.pagination.total / 50); //109
@@ -258,6 +300,7 @@ export class LandingPageComponent implements OnInit {
             this.start = (this.page - 1) * 50 + 1;
             this.searchProduct(type);
           } else {
+            console.log('done');
             this.exportCSV(type);
             this.isLoading = false;
           }
@@ -276,22 +319,34 @@ export class LandingPageComponent implements OnInit {
         }
       );
   }
+  toDataURLPromise = (url: any) =>
+    fetch(url)
+      .then((response) => response.blob())
+      .then(
+        (blob) =>
+          new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+          })
+      );
 
-  exportCSV(type: "all" | "brand") {
-    this.data = uniqBy(this.data, "id");
-    if (type === "all") {
+  exportCSV(type: 'all' | 'brand') {
+    this.data = uniqBy(this.data, 'id');
+    if (type === 'all') {
       new AngularCsv(
         this.data,
-        `${moment().format("YYYYMMDDkkmmss")}_${this.searchValue}`,
+        `${moment().format('YYYYMMDDkkmmss')}_${this.searchValue}`,
         this.options
       );
     }
-    if (type === "brand") {
-      const listGroupBrand = groupBy(this.data, "gpfBrand");
+    if (type === 'brand') {
+      const listGroupBrand = groupBy(this.data, 'gpfBrand');
       for (const property in listGroupBrand) {
         new AngularCsv(
           listGroupBrand[property],
-          `${moment().format("YYYYMMDDkkmmss")}_${property}`,
+          `${moment().format('YYYYMMDDkkmmss')}_${property}`,
           this.options
         );
       }

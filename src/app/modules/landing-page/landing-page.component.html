@@ -5,50 +5,34 @@
     <form class="example-form d-flex justify-content-center">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Search</mat-label>
-        <input
-          matInput
-          placeholder="..."
-          [(ngModel)]="searchValue"
-          name="search"
-          minlength="3"
-        />
+        <input matInput placeholder="..." [(ngModel)]="searchValue" name="search" minlength="3" />
       </mat-form-field>
     </form>
     <p>
       {{
-        searchValue.length < 3
-          ? "length search value must be greater than 2 character"
-          : ""
-      }}
-    </p>
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="download('all')"
-      [disabled]="isLoadingToken || isLoading"
-    >
-      {{
-        isLoadingToken
+      searchValue.length < 3 ? "length search value must be greater than 2 character" : "" }} </p>
+        <button mat-raised-button color="primary" (click)="download('all')" [disabled]="isLoadingToken || isLoading">
+          {{
+          isLoadingToken
           ? "Loading Token"
           : isLoading
           ? "Generating CSV"
           : "Download CSV By Search"
-      }}
-    </button>
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="download('brand')"
-      [disabled]="isLoadingToken || isLoading"
-      class="ml-5"
-    >
-      {{
-        isLoadingToken
+          }}
+        </button>
+        <button mat-raised-button color="primary" (click)="download('brand')" [disabled]="isLoadingToken || isLoading"
+          class="ml-5">
+          {{
+          isLoadingToken
           ? "Loading Token"
           : isLoading
           ? "Generating CSV"
           : "Download CSV By Brand"
-      }}
-    </button>
+          }}
+        </button>
   </div>
+  <img src="https://www.kroger.com/product/images/large/front/0004122631081" alt="">
+  <img src="https://www.kroger.com/product/images/large/front/0081874500217" alt="">
+  <img src="https://v2.convertapi.com/d/8udtnll2otef07w4gzvekaz93oz17apq/1.sm.jpg" alt="">
+
 </div>
