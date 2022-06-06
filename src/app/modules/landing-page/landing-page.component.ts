@@ -126,25 +126,6 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
     this.refreshToken();
-    // this.campaignService
-    //   .convertWebpToJpg(
-    //     'https://www.kroger.com/product/images/large/front/0004122631081'
-    //   )
-    //   .subscribe((res: any) => {
-    //     console.log(res);
-    //   });
-    // this.toDataURL(
-    //   'https://www.kroger.com/product/images/large/front/0004122631081',
-    //   (dataUrl) => {
-    //     this.campaignService
-    //       .convertWebpToJpgBase64(
-    //         dataUrl.replace('data:image/webp;base64,', '')
-    //       )
-    //       .subscribe((res: any) => {
-    //         console.log(res.Files[0].Url);
-    //       });
-    //   }
-    // );
   }
 
   download(type: 'all' | 'brand') {
@@ -299,19 +280,17 @@ export class LandingPageComponent implements OnInit {
               this.data.push(result);
             })
           );
-          this.totalPage = Math.ceil(res.meta.pagination.total / 50); //109
+          this.totalPage = Math.ceil(res.meta?.pagination?.total / 50) || 0; //109
           if (this.page < this.totalPage) {
             this.page = this.page + 1;
             this.start = (this.page - 1) * 50 + 1;
             this.searchProduct(type);
           } else {
-            console.log('done');
             this.exportCSV(type);
             this.isLoading = false;
           }
         },
         (_error: HttpErrorResponse) => {
-          console.log();
           if (_error.status === 400) {
             this.exportCSV(type);
             this.isLoading = false;
@@ -321,6 +300,9 @@ export class LandingPageComponent implements OnInit {
               this.searchProduct(type);
             });
           }
+        },
+        () => {
+          this.isLoading = false;
         }
       );
   }
@@ -338,22 +320,26 @@ export class LandingPageComponent implements OnInit {
       );
 
   exportCSV(type: 'all' | 'brand') {
-    this.data = uniqBy(this.data, 'id');
-    if (type === 'all') {
-      new AngularCsv(
-        this.data,
-        `${moment().format('YYYYMMDDkkmmss')}_${this.searchValue}`,
-        this.options
-      );
-    }
-    if (type === 'brand') {
-      const listGroupBrand = groupBy(this.data, 'gpfBrand');
-      for (const property in listGroupBrand) {
+    if (this.data.length === 0) {
+      alert('Have no data by this search');
+    } else {
+      this.data = uniqBy(this.data, 'id');
+      if (type === 'all') {
         new AngularCsv(
-          listGroupBrand[property],
-          `${moment().format('YYYYMMDDkkmmss')}_${property}`,
+          this.data,
+          `${moment().format('YYYYMMDDkkmmss')}_${this.searchValue}`,
           this.options
         );
+      }
+      if (type === 'brand') {
+        const listGroupBrand = groupBy(this.data, 'gpfBrand');
+        for (const property in listGroupBrand) {
+          new AngularCsv(
+            listGroupBrand[property],
+            `${moment().format('YYYYMMDDkkmmss')}_${property}`,
+            this.options
+          );
+        }
       }
     }
   }

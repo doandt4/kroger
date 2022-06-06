@@ -100,6 +100,35 @@ export class CampaignService {
       headers,
     });
   }
+
+  convertWebpToJpgByUrl(urlImage: string) {
+    const url =
+      'https://v2.convertapi.com/convert/webp/to/jpg?Secret=Hftj8oJxW282rjfH&StoreFile=true';
+    let body = {
+      Parameters: [
+        {
+          Name: 'File',
+          FileValue: {
+            Url: urlImage,
+          },
+        },
+        {
+          Name: 'StoreFile',
+          Value: true,
+        },
+      ],
+    };
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.httpIgnore
+      .post(`${url}`, body, {
+        headers,
+      })
+      .toPromise();
+  }
+
   convertWebpToJpgBase64(dataBase64: string) {
     const url =
       'https://v2.convertapi.com/convert/webp/to/jpg?Secret=Hftj8oJxW282rjfH&StoreFile=true';
