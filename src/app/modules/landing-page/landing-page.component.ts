@@ -184,116 +184,124 @@ export class LandingPageComponent implements OnInit {
     this.campaignService
       .searchProduct(this.searchValue, this.accessToken, this.start)
       .subscribe(
-        (res: any) => {
-          res.data.map((product: any) => {
-            let result: any = {};
-            result.id = `ItemGroup${product.productId}`;
-            result.type = 'simple';
-            result.sku = `\t${product.upc}`;
-            result.name = `${product.description}`;
-            result.published = 1;
-            result.isFeatured = `\t0`;
-            result.visibilityInCatalog = 'visible';
-            result.shortDescription = '';
-            result.description = `${product.description}`;
-            result.dateSalePriceStart = '';
-            result.dateSalePriceEnds = '';
-            result.taxStatus = 'taxable';
-            result.taxClass = '';
-            result.inStock = 1;
-            result.stock = '';
-            result.lowStockAmount = '';
-            result.backOrderAllowed = `\t0`;
-            result.soldIndividually = `\t0`;
-            result.weight = `\t0 pounds`;
-            result.length = `\t${product.itemInformation.depth || 0} inches`;
-            result.width = `\t${product.itemInformation.width || 0} inches`;
-            result.height = `\t${product.itemInformation.height || 0} inches`;
-            result.allowCustomerReviews = 1;
-            result.purchaseNote = '';
-            result.salePrice = '';
-            result.regularPrice = '';
-            // product.categories[0].replace(/\s/g, '');
-            result.categories = `\t${product.categories.join(', ')}`;
-            result.tags = '';
-            result.shippingClass = '';
-            result.images = '';
-            product.images.slice(0, 1).map((image: any) => {
-              let a = image.sizes.filter((size: any) => size.size === 'large');
-              let b = a.map(async (x: any) => {
-                let dataUrl: any = await this.toDataURLPromise(x.url);
-                dataUrl = dataUrl.replace('data:image/webp;base64,', '');
-                dataUrl = dataUrl.replace('data:image/jpeg;base64,', '');
-                dataUrl = dataUrl.replace('data:image/png;base64,', '');
-                let convertedImg = await this.campaignService.convertWebpToJpgBase64(
-                  dataUrl
-                );
-                console.log(convertedImg);
-                return convertedImg;
+        async (res: any) => {
+          await Promise.all(
+            res.data.map(async (product: any) => {
+              let result: any = {};
+              result.id = `ItemGroup${product.productId}`;
+              result.type = 'simple';
+              result.sku = `\t${product.upc}`;
+              result.name = `${product.description}`;
+              result.published = 1;
+              result.isFeatured = `\t0`;
+              result.visibilityInCatalog = 'visible';
+              result.shortDescription = '';
+              result.description = `${product.description}`;
+              result.dateSalePriceStart = '';
+              result.dateSalePriceEnds = '';
+              result.taxStatus = 'taxable';
+              result.taxClass = '';
+              result.inStock = 1;
+              result.stock = '';
+              result.lowStockAmount = '';
+              result.backOrderAllowed = `\t0`;
+              result.soldIndividually = `\t0`;
+              result.weight = `\t0 pounds`;
+              result.length = `\t${product.itemInformation.depth || 0} inches`;
+              result.width = `\t${product.itemInformation.width || 0} inches`;
+              result.height = `\t${product.itemInformation.height || 0} inches`;
+              result.allowCustomerReviews = 1;
+              result.purchaseNote = '';
+              result.salePrice = '';
+              result.regularPrice = '';
+              // product.categories[0].replace(/\s/g, '');
+              result.categories = `\t${product.categories.join(', ')}`;
+              result.tags = '';
+              result.shippingClass = '';
+              result.images = '';
+              await Promise.all(
+                product.images.slice(0, 2).map(async (image: any) => {
+                  let a = image.sizes.filter(
+                    (size: any) => size.size === 'large'
+                  );
+                  let b = await Promise.all(
+                    a.map(async (x: any) => {
+                      let dataUrl: any = await this.toDataURLPromise(x.url);
+                      dataUrl = dataUrl.replace('data:image/webp;base64,', '');
+                      dataUrl = dataUrl.replace('data:image/jpeg;base64,', '');
+                      dataUrl = dataUrl.replace('data:image/png;base64,', '');
+                      let convertedImg: any = await this.campaignService.convertWebpToJpgBase64(
+                        dataUrl
+                      );
+                      console.log(convertedImg.Files[0].Url);
+                      return convertedImg.Files[0].Url;
 
-                // return x.url;
-              });
-              result.images = !result.images
-                ? result.images + b
-                : result.images + ',' + b;
-            });
-            result.downloadLimit = '';
-            result.downloadExpiryDays = '';
-            result.parent = '';
-            result.groupedProducts = '';
-            result.upSells = '';
-            result.crossSells = '';
-            result.externalUrl = '';
-            result.buttonText = '';
-            result.position = `\t0`;
-            result.gpfProductDescription = '';
-            result.gpfAvailability = '';
-            result.gpfBundleIndicator = '';
-            result.gpfAvailabilityDate = '';
-            result.gpfCondition = '';
-            result.gpfBrand = product.brand;
-            result.gpfManufacturePartNumber = '';
-            result.gpfProductType = '';
-            result.gpfGoogleProductCategory = '';
-            result.gpfGlobalTradeItemNumber = `\t${product.upc}`;
-            result.gpfGender = '';
-            result.gpfAgeGroup = '';
-            result.gpfColor = '';
-            result.gpfSize = '';
-            result.gpfSizeType = '';
-            result.gpfSizeSystem = '';
-            result.gpfUnitPricingMeasure = '';
-            result.gpfUnitPricingBaseMeasure = '';
-            result.gpfMultipack = '';
-            result.gpfInstalment = '';
-            result.gpfMaterial = '';
-            result.gpfPattern = '';
-            result.gpfAdultContent = '';
-            result.gpfIdentifierExistsFlag = '';
-            result.gpfAdwordsGroupFilter = '';
-            result.gpfAdwordsLabels = '';
-            result.gpfBingCategory = '';
-            result.gpfDeliveryLabel = '';
-            result.gpfMinHandlingTime = '';
-            result.gpfMaxHandlingTime = '';
-            result.gpfEnergyEfficiencyClass = '';
-            result.gpfMinEnergyEfficiencyClass = '';
-            result.gpfMaxEnergyEfficiencyClass = '';
-            result.gpfCostOfGoodsSold = '';
-            result.gpfIncludedDestination = '';
-            result.gpfExcludedDestination;
-            result.gpfCustomLabel_0 = '';
-            result.gpfCustomLabel_1 = '';
-            result.gpfCustomLabel_2 = '';
-            result.gpfCustomLabel_3 = '';
-            result.gpfCustomLabel_4 = '';
-            result.gpfPromotionId = '';
-            result.gpfBingShippingInfoPrice;
-            result.gpfBingShippingInfoCountryPrice = '';
-            result.gpfBingShippingInfoCountryPriceService = '';
-            result.gpfHideProductFromFeed = '';
-            this.data.push(result);
-          });
+                      // return x.url;
+                    })
+                  );
+                  result.images = !result.images
+                    ? result.images + b
+                    : result.images + ',' + b;
+                })
+              );
+              result.downloadLimit = '';
+              result.downloadExpiryDays = '';
+              result.parent = '';
+              result.groupedProducts = '';
+              result.upSells = '';
+              result.crossSells = '';
+              result.externalUrl = '';
+              result.buttonText = '';
+              result.position = `\t0`;
+              result.gpfProductDescription = '';
+              result.gpfAvailability = '';
+              result.gpfBundleIndicator = '';
+              result.gpfAvailabilityDate = '';
+              result.gpfCondition = '';
+              result.gpfBrand = product.brand;
+              result.gpfManufacturePartNumber = '';
+              result.gpfProductType = '';
+              result.gpfGoogleProductCategory = '';
+              result.gpfGlobalTradeItemNumber = `\t${product.upc}`;
+              result.gpfGender = '';
+              result.gpfAgeGroup = '';
+              result.gpfColor = '';
+              result.gpfSize = '';
+              result.gpfSizeType = '';
+              result.gpfSizeSystem = '';
+              result.gpfUnitPricingMeasure = '';
+              result.gpfUnitPricingBaseMeasure = '';
+              result.gpfMultipack = '';
+              result.gpfInstalment = '';
+              result.gpfMaterial = '';
+              result.gpfPattern = '';
+              result.gpfAdultContent = '';
+              result.gpfIdentifierExistsFlag = '';
+              result.gpfAdwordsGroupFilter = '';
+              result.gpfAdwordsLabels = '';
+              result.gpfBingCategory = '';
+              result.gpfDeliveryLabel = '';
+              result.gpfMinHandlingTime = '';
+              result.gpfMaxHandlingTime = '';
+              result.gpfEnergyEfficiencyClass = '';
+              result.gpfMinEnergyEfficiencyClass = '';
+              result.gpfMaxEnergyEfficiencyClass = '';
+              result.gpfCostOfGoodsSold = '';
+              result.gpfIncludedDestination = '';
+              result.gpfExcludedDestination;
+              result.gpfCustomLabel_0 = '';
+              result.gpfCustomLabel_1 = '';
+              result.gpfCustomLabel_2 = '';
+              result.gpfCustomLabel_3 = '';
+              result.gpfCustomLabel_4 = '';
+              result.gpfPromotionId = '';
+              result.gpfBingShippingInfoPrice;
+              result.gpfBingShippingInfoCountryPrice = '';
+              result.gpfBingShippingInfoCountryPriceService = '';
+              result.gpfHideProductFromFeed = '';
+              this.data.push(result);
+            })
+          );
           this.totalPage = Math.ceil(res.meta.pagination.total / 50); //109
           if (this.page < this.totalPage) {
             this.page = this.page + 1;
