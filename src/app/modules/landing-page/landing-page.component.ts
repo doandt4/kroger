@@ -233,10 +233,7 @@ export class LandingPageComponent implements OnInit {
                       let convertedImg: any = await this.campaignService.convertWebpToJpgBase64(
                         dataUrl
                       );
-                      console.log(convertedImg.Files[0].Url);
                       return convertedImg.Files[0].Url;
-
-                      // return x.url;
                     })
                   );
                   result.images = !result.images
