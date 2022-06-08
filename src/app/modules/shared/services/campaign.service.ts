@@ -75,63 +75,64 @@ export class CampaignService {
     });
   }
 
-  convertWebpToJpg(urlImage: string) {
-    const url =
-      'https://v2.convertapi.com/convert/webp/to/jpg?Secret=Hftj8oJxW282rjfH&StoreFile=true';
-    let body = {
-      Parameters: [
-        {
-          Name: 'File',
-          FileValue: {
-            Url: `${urlImage}`,
-          },
-        },
-        {
-          Name: 'StoreFile',
-          Value: true,
-        },
-      ],
-    };
+  // convertWebpToJpg(urlImage: string) {
+  //   const url =
+  //     'https://v2.convertapi.com/convert/webp/to/jpg?Secret=JoHnbXejdPU9NwDk&StoreFile=true';
+  //   let body = {
+  //     Parameters: [
+  //       {
+  //         Name: 'File',
+  //         FileValue: {
+  //           Url: `${urlImage}`,
+  //         },
+  //       },
+  //       {
+  //         Name: 'StoreFile',
+  //         Value: true,
+  //       },
+  //     ],
+  //   };
 
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-    return this.httpIgnore.post(`${url}`, body, {
-      headers,
-    });
-  }
+  //   let headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //   });
+  //   return this.httpIgnore.post(`${url}`, body, {
+  //     headers,
+  //   });
+  // }
 
-  convertWebpToJpgByUrl(urlImage: string) {
-    const url =
-      'https://v2.convertapi.com/convert/webp/to/jpg?Secret=Hftj8oJxW282rjfH&StoreFile=true';
-    let body = {
-      Parameters: [
-        {
-          Name: 'File',
-          FileValue: {
-            Url: urlImage,
-          },
-        },
-        {
-          Name: 'StoreFile',
-          Value: true,
-        },
-      ],
-    };
+  // convertWebpToJpgByUrl(urlImage: string) {
+  //   const url =
+  //     'https://v2.convertapi.com/convert/webp/to/jpg?Secret=Hftj8oJxW282rjfH&StoreFile=true';
+  //   let body = {
+  //     Parameters: [
+  //       {
+  //         Name: 'File',
+  //         FileValue: {
+  //           Url: urlImage,
+  //         },
+  //       },
+  //       {
+  //         Name: 'StoreFile',
+  //         Value: true,
+  //       },
+  //     ],
+  //   };
 
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-    return this.httpIgnore
-      .post(`${url}`, body, {
-        headers,
-      })
-      .toPromise();
-  }
+  //   let headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //   });
+  //   return this.httpIgnore
+  //     .post(`${url}`, body, {
+  //       headers,
+  //     })
+  //     .toPromise();
+  // }
 
   convertWebpToJpgBase64(dataBase64: string) {
+    let response: any;
     const url =
-      'https://v2.convertapi.com/convert/webp/to/jpg?Secret=Hftj8oJxW282rjfH&StoreFile=true';
+      'https://v2.convertapi.com/convert/webp/to/jpg?Secret=JoHnbXejdPU9NwDk&StoreFile=true';
     let body = {
       Parameters: [
         {
@@ -155,6 +156,18 @@ export class CampaignService {
       .post(`${url}`, body, {
         headers,
       })
-      .toPromise();
+      .pipe(
+        tap((result) => {
+          response = result;
+        }),
+        map(() => {
+          return response;
+        }),
+        catchError((err: HttpErrorResponse) => throwError(err))
+      )
+      .toPromise()
+      .catch((error) => {
+        return throwError(error);
+      });
   }
 }

@@ -13,7 +13,7 @@ import * as moment from 'moment';
 export class LandingPageComponent implements OnInit {
   searchValue: string = '';
   accessToken: string = '';
-
+  timer: any;
   data = [];
   isLoadingToken = false;
   isLoading = false;
@@ -147,20 +147,6 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
-  toDataURL(url: any, callback: any) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-      var reader = new FileReader();
-      reader.onloadend = function() {
-        callback(reader.result);
-      };
-      reader.readAsDataURL(xhr.response);
-    };
-    xhr.open('GET', url);
-    xhr.responseType = 'blob';
-    xhr.send();
-  }
-
   searchProduct(type: 'all' | 'brand') {
     this.campaignService
       .searchProduct(this.searchValue, this.accessToken, this.start)
@@ -214,7 +200,11 @@ export class LandingPageComponent implements OnInit {
                       let convertedImg: any = await this.campaignService.convertWebpToJpgBase64(
                         dataUrl
                       );
-                      return convertedImg.Files[0].Url;
+                      if (!convertedImg?.Files) {
+                        return '';
+                      } else {
+                        return convertedImg?.Files[0]?.Url;
+                      }
                     })
                   );
                   result.images = !result.images
@@ -300,10 +290,10 @@ export class LandingPageComponent implements OnInit {
               this.searchProduct(type);
             });
           }
-        },
-        () => {
-          this.isLoading = false;
         }
+        // () => {
+        //   this.isLoading = false;
+        // }
       );
   }
   toDataURLPromise = (url: any) =>
