@@ -13,7 +13,7 @@ import * as moment from 'moment';
 export class LandingPageComponent implements OnInit {
   searchValue: string = '';
   accessToken: string = '';
-  timer: any;
+  startTime: any;
   data = [];
   isLoadingToken = false;
   isLoading = false;
@@ -130,6 +130,7 @@ export class LandingPageComponent implements OnInit {
 
   download(type: 'all' | 'brand') {
     if (this.searchValue.length >= 3) {
+      this.startTime = moment();
       this.page = 1;
       this.start = 1;
       this.totalPage = 1;
@@ -271,7 +272,10 @@ export class LandingPageComponent implements OnInit {
             })
           );
           this.totalPage = Math.ceil(res.meta?.pagination?.total / 50) || 0; //109
-          if (this.page < this.totalPage) {
+          if (
+            this.page < this.totalPage &&
+            moment.duration(moment().diff(this.startTime)).minutes() < 30
+          ) {
             this.page = this.page + 1;
             this.start = (this.page - 1) * 50 + 1;
             this.searchProduct(type);
