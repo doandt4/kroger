@@ -132,7 +132,7 @@ export class CampaignService {
   convertWebpToJpgBase64(dataBase64: string) {
     let response: any;
     const url =
-      'https://v2.convertapi.com/convert/webp/to/jpg?Secret=JoHnbXejdPU9NwDk&StoreFile=true';
+      'https://v2.convertapi.com/convert/webp/to/jpg?Secret=tlSs9CYbpbhHqHZj&StoreFile=true';
     let body = {
       Parameters: [
         {

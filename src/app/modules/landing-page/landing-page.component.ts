@@ -12,6 +12,7 @@ import * as moment from 'moment';
 })
 export class LandingPageComponent implements OnInit {
   searchValue: string = '';
+  discount: number = 0;
   accessToken: string = '';
   startTime: any;
   data = [];
@@ -180,8 +181,16 @@ export class LandingPageComponent implements OnInit {
               result.height = `\t${product.itemInformation.height || 0} inches`;
               result.allowCustomerReviews = 1;
               result.purchaseNote = '';
-              result.salePrice = '';
-              result.regularPrice = '';
+              result.salePrice = (
+                Math.round(
+                  (100 - this.discount) * product.items[0].price.promo
+                ) / 100
+              ).toFixed(2);
+              result.regularPrice = (
+                Math.round(
+                  (100 - this.discount) * product.items[0].price.regular
+                ) / 100
+              ).toFixed(2);
               // product.categories[0].replace(/\s/g, '');
               result.categories = `\t${product.categories.join(', ')}`;
               result.tags = '';
@@ -318,6 +327,7 @@ export class LandingPageComponent implements OnInit {
       alert('Have no data by this search');
     } else {
       this.data = uniqBy(this.data, 'id');
+      console.log(this.data);
       if (type === 'all') {
         new AngularCsv(
           this.data,
@@ -335,6 +345,15 @@ export class LandingPageComponent implements OnInit {
           );
         }
       }
+    }
+  }
+
+  changeDiscount() {
+    if (this.discount < 0) {
+      this.discount = 0;
+    }
+    if (this.discount > 100) {
+      this.discount = 100;
     }
   }
 }

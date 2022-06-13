@@ -3,9 +3,14 @@
   <div class="pt-5">
     <h2 class="text-center">EXPORT CSV</h2>
     <form class="example-form d-flex justify-content-center">
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="example-full-width mr-5" appearance="fill">
         <mat-label>Search</mat-label>
         <input matInput placeholder="..." [(ngModel)]="searchValue" name="search" minlength="3" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width ml-5" appearance="fill">
+        <mat-label>Discount</mat-label>
+        <input type="number" min="0" max="100" matInput placeholder="..." [(ngModel)]="discount" name="discount"
+          (change)="changeDiscount()" />
       </mat-form-field>
     </form>
     <p>
